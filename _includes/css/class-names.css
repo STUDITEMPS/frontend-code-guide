@@ -1,0 +1,9 @@
+/* Schlechtes Beispiel */
+.t { ... }
+.red { ... }
+.header { ... }
+
+/* Gutes Beispiel */
+.tweet { ... }
+.important { ... }
+.tweet-header { ... }

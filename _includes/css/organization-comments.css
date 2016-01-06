@@ -1,0 +1,17 @@
+/*
+ * Komponentensektion Ueberschrift
+ */
+
+.element { ... }
+
+
+/*
+ * Komponentensektion &Uuml;berschrift
+ *
+ * Manchmal muss optionaler Kontext fuer die gesamte Komponente eingefuegt werden. Mache es so wie hier, wenn es wichtig ist.
+ */
+
+.element { ... }
+
+/* Kontextuelle Subkomponente oder Attribut */
+.element-heading { ... }

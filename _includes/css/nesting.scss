@@ -1,0 +1,9 @@
+// Ohne Schachtelung
+.table > thead > tr > th { … }
+.table > thead > tr > td { … }
+
+// Mit Schachtelung
+.table > thead > tr {
+  > th { … }
+  > td { … }
+}

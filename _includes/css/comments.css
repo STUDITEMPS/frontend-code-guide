@@ -1,0 +1,11 @@
+/* Schlechtes Beispiel */
+/* Modaler Header */
+.modal-header {
+  ...
+}
+
+/* Gutes Beispiel */
+/* Umschliessendes Element fuer .modal-title und .modal-close */
+.modal-header {
+  ...
+}

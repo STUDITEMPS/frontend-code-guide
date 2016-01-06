@@ -1,0 +1,409 @@
+---
+layout: default
+---
+
+
+<div class="heading" id="toc">
+  <h2>Inhaltsverzeichnis</h2>
+</div>
+<div class="section toc">
+  <div class="col">
+    <h4><a href="#html">HTML</a></h4>
+    <ul>
+      <li><a href="#html-syntax">Syntax</a></li>
+      <li><a href="#html-doctype">HTML5 doctype</a></li>
+      <li><a href="#html-lang">Language Attribut</a></li>
+      <li><a href="#html-encoding">Zeichenkodierung</a></li>
+      <li><a href="#html-ie-compatibility-mode">Internet Explorer Kompatibilit&auml;tsmodus</a></li>
+      <li><a href="#html-style-script">CSS und JavaScript includes</a></li>
+      <li><a href="#html-practicality">Praktisch vor Rein</a></li>
+      <li><a href="#html-attribute-order">Attributreihenfolge</a></li>
+      <li><a href="#html-boolean-attributes">Boolesche Attribute</a></li>
+      <li><a href="#html-reducing-markup">Reduzierung des Markup</a></li>
+      <li><a href="#html-javascript">JavaScript generiertes Markup</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <h4><a href="#css">CSS</a></h4>
+    <ul>
+      <li><a href="#css-syntax">CSS syntax</a></li>
+      <li><a href="#css-declaration-order">Reihenfolge der Deklarationen</a></li>
+      <li><a href="#css-import">Vermeide @import</a></li>
+      <li><a href="#css-media-queries">Platzierung von Medienabfragen</a></li>
+      <li><a href="#css-prefixed-properties">Vorbestimmte Eigenschaften</a></li>
+      <li><a href="#css-single-declarations">Einfache Deklarationen</a></li>
+      <li><a href="#css-shorthand">Kurznotation</a></li>
+      <li><a href="#css-nesting">Verschachtelung in Less und Sass</a></li>
+      <li><a href="#css-comments">Kommentare</a></li>
+      <li><a href="#css-classes">Klassen</a></li>
+      <li><a href="#css-selectors">Selektoren</a></li>
+      <li><a href="#css-organization">Aufbau</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="section" id="golden-rule">
+  <div class="col">
+    <h2>Goldene Regel</h2>
+    <p>Halte dich immer an definierte Regeln - seien es diese, oder eigene. Gro&szlig;e oder kleine Fehler - melde dich, wenn du Unstimmigkeiten gefunden hast. Um Beitr&auml;ge zu diesem Styleguide zu liefern, &ouml;ffne bitte ein Issue auf <a href="https://github.com/mdo/code-guide/issues/new">GitHub</a>.</p>
+  </div>
+  <div class="col">
+    <blockquote>
+      <p>Jede Zeile Code sollte so aussehen, als wenn sie von einer Person geschrieben wurde, egal, wieviele wirklich daran gearbeitet haben.</p>
+    </blockquote>
+  </div>
+</div>
+
+
+
+<div class="heading" id="html">
+  <h2>HTML</h2>
+</div>
+
+<div class="section" id="html-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen - es ist die einzige M&ouml;glichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Verschachtelte Elemente sollten einfach einger&uuml;ckt werden (mit 2 Leerzeichen).</li>
+      <li>Verwende Anf&uuml;hrungszeichen f&uuml;r Attribute, keine Apostrophe.</li>
+      <li>Benutze keine abschlie&szlig;enden Schr&auml;gstriche in selbstschlie&szlig;enden Elementen - die <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">HTML5 Spezifikationen</a> besagen, dass sie optional sind.</li>
+      <li>Lasse keine schlie&szlig;enden Tags weg (z.B. <code>&lt;/li&gt;</code> oder <code>&lt;/body&gt;</code>).</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/syntax.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-doctype">
+  <div class="col">
+    <h3>HTML5 Doctype</h3>
+    <p>Aktiviere den Standardmodus und konsistenteres Rendering in allen Browsern, indem der Doctype am Beginn jeder HTML Seite angegeben wird.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/doctype.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-lang">
+  <div class="col">
+    <h3>Sprachattribut</h3>
+    <p>Aus der HTML5 Spezifikation:</p>
+    <blockquote>
+      <p>Autoren wird empfohlen, ein Sprachattribut im Root-HTML Tag anzugeben, um die Sprache des Dokuments bekanntzumachen. Es hilft Sprachausgabetools die richtige Aussprache zu w&auml;hlen, &Uuml;bersetzungstools die richtigen Regeln zu verwenden, usw.</p>
+    </blockquote>
+    <p>Weitere Informationen &uuml;ber das <code>lang</code> Attribut finden sich <a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">in den Spezifikationen</a>.</p>
+    <p>Auf Sitepoint findet sich eine <a href="http://reference.sitepoint.com/html/lang-codes">Liste der Sprachcodes</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/lang.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-ie-compatibility-mode">
+  <div class="col">
+    <h3>IE Kompatibilit&auml;tsmodus</h3>
+    <p>Der Internet Explorer unterst&uuml;tzt einen Kompatibilit&auml;tsmodus durch den <code>&lt;meta&gt;</code> Tag, um anzugeben, unter welcher IE Version die Seite gerendert werden soll. Sofern es andere Umst&auml;nde nicht verlangen, sollte immer die modernste Version gew&auml;hlt werden, indem der <strong>Edge Modus</strong> verwendet wird.</p>
+    <p>Weitere Informationen h&auml;lt dieser hervorragende <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e"> Stack Overflow Artikel</a> bereit.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/ie-compatibility-mode.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-encoding">
+  <div class="col">
+    <h3>Zeichenkodierung</h3>
+    <p>Das richtige Rendering des Inhalts kann schnell und einfach mit einer expliziten Zeichenkodierung festgelegt werden. Wenn die Zeichenkoderung auf diese Art gesetzt wurde, kann auf die einzelne Deklaration in HTML Elementen verzeichtet werden, sofern sie mit der des Dokumentes &uuml;bereinstimmen (normalerweise UTF-8).</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-style-script">
+  <div class="col">
+    <h3>CSS und JavaScript includes</h3>
+    <p>Nach den HTML5 Spezifikationen ist es nicht notwendig, einen <code>type</code> anzugeben, da CSS und JavaScript Dateien per Voreinstellung als <code>text/css</code> und <code>text/javascript</code> erwartet werden.</p>
+    <h4>HTML5 Spezifikation links</h4>
+    <ul>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Benutzung von link</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element">Benutzung von style</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element">Benutzung von script</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/style-script.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-practicality">
+  <div class="col">
+    <h3>Praktisch vor Rein</h3>
+    <p>Bem&uuml;he dich, die HTML Standards und Semantik beizubehalten, aber nicht zum Preis von Praktikabilit&auml;t. Benutze so wenig Markup mit den wenigsten Komplexit&auml;ten, wie m&ouml;glich.</p>
+  </div>
+</div>
+
+<div class="section" id="html-attribute-order">
+  <div class="col">
+    <h3>Attributreihenfolge</h3>
+    <p>HTML Attribute sollten in der folgenden Ordnung erscheinen, um die Leserlichkeit zu erleichtern.</p>
+    <ul>
+      <li><code>class</code></li>
+      <li><code>id</code>, <code>name</code></li>
+      <li><code>data-*</code></li>
+      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
+      <li><code>title</code>, <code>alt</code></li>
+      <li><code>aria-*</code>, <code>role</code></li>
+    </ul>
+    <p>Klassen beinhalten wiederverwendbare Komponenten, also kommen sie zuerst. IDs sind eher spezifisch und sollten seltener verwendet werden (z.B. f&uuml;r seiteninterne Lesezeichen), also kommen sie als zweites.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/attribute-order.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-boolean-attributes">
+  <div class="col">
+    <h3>Boolesche Attribute</h3>
+    <p>Ein boolesches Attribute braucht keinen Wert. XHTML verlangt einen gegebenen Wert, aber HTML5 ben&ouml;tigt es nicht.</p>
+    <p>Weitere Informationen finden sich im <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes">WhatWG Abschnitt f&uuml;r boolesche Attribute</a>:</p>
+    <blockquote>
+      <p>Die Anwesenheit eines booleschen Attributes an einem Element symbolisiert den Wahr-Wert, die Abwesenheit des Attributs den Falsch-Wert.</p>
+    </blockquote>
+    <p>Wenn der Wert des Attributs angegeben werden <em>muss</em>, obwohl es eigentlich <strong>nicht notwendig ist</strong>, folge diesem WhatWG Leitsatz:</p>
+    <blockquote>
+      <p>Wenn das Attribut vorhanden ist, muss sein Wert entweder ein leerer String oder [...] der kanonische Name des Attributs ohne f&uuml;hrendes oder nachgestelltes Leerzeichen sein.</p>
+    </blockquote>
+    <p><strong>Kurzgefasst: F&uuml;ge keinen Wert hinzu.</strong></p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/boolean-attributes.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-reducing-markup">
+  <div class="col">
+    <h3>Reduzierung des Markup</h3>
+    <p>Wenn m&ouml;glich, vermeide &uuml;berfl&uuml;ssige Elternelemente beim Schreiben von HTML. Oft sind hierf&uuml;r Code-Iterationen und Refactoring notwendig, aber letzendlich wird weniger HTML produziert, wie das Beispiel zeigt:</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/reducing-markup.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-javascript">
+  <div class="col">
+    <h3>JavaScript generiertes Markup</h3>
+    <p>Das Schreiben von Markup in JavaScript macht den Inhalt schwerer zu finden, schwerer zu editieren und weniger performant. Vermeide dies, wo m&ouml;glich.</p>
+  </div>
+</div>
+
+
+
+<div class="heading" id="css">
+  <h2>CSS</h2>
+</div>
+
+<div class="section" id="css-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen - es ist die einzige M&ouml;glichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Lasse beim gruppieren von Selektoren jedem Selektor seine eigene Zeile.</li>
+      <li>F&uuml;r bessere Lesbarkeit, f&uuml;ge ein Leerzeichen vor jeder &ouml;ffnenden Klammer eines Deklarationsblocks hinzu.</li>
+      <li>Platziere schlie&szlig;ende Klammern in einer neuen Zeile.</li>
+      <li>F&uuml;ge ein Leerzeichen hinter jedem <code>:</code> f&uuml;r jede Deklaration hinzu.</li>
+      <li>F&uuml;r ein genaueres Fehlerreporting sollte jede Deklaration in einer eigenen Zeile stehen.</li>
+      <li>Beende jede Deklaration mit einem Semikolon. F&uuml;r die letzte Deklaration ist dies optional, aber ohne ist der Code fehleranf&auml;lliger.</li>
+      <li>Kommagetrennte Eigenschaftswerte sollten ein Leerzeichen nach jedem Komma enthalten (z.B.<code>box-shadow</code>).</li>
+      <li>F&uuml;ge keine Kommata <em>innerhalb</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, oder <code>rect()</code> Werten hinzu. Es hilft, verschiedene Farbwerte (Komma, kein Leerzeichen) von verschiedenen Eigenschaftswerten (Komma, mit Leerzeichen) zu unterscheiden.</li>
+      <li>F&uuml;ge Eigenschaftswerten oder Farbwerten keine f&uuml;hrenden Nullen hinzu (z.B., <code>.5</code> anstatt <code>0.5</code> und <code>-.5px</code> anstatt <code>-0.5px</code>).</li>
+      <li>Schreibe Hexwerte klein, z.B. <code>#fff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
+      <li>Verwende kurze Hexwerte, wenn m&ouml;glich. Z.B. <code>#fff</code> anstatt <code>#ffffff</code>.</li>
+      <li>Setze Attributwerte in Anf&uuml;hrungszeichen, z.B. <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Sie sind nur in einigen F&auml;llen optional</a> und es ist eine Gew&ouml;hnung an Konsistenz.</li>
+      <li>Vermeide das Setzen von Einheiten f&uuml;r Nullwerte, z.B. <code>margin: 0;</code> anstatt <code>margin: 0px;</code>.</li>
+    </ul>
+    <p>Fragen bez&uuml;glich den hier verwendeten Begriffen? Weitere Informationen gibt es im <a href="http://de.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">Syntax Abschnitt des Cascading Style Sheet Artikels</a> auf Wikipedia.</p> 
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/syntax.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-declaration-order">
+  <div class="col">
+    <h3>Reihenfolge der Deklarationen</h3>
+    <p>Verbundene Eigenschaftsdeklarationen sollten in der folgenden Reihenfolge gruppiert werden:</p>
+    <ol>
+      <li>Positionierung</li>
+      <li>Box Modell</li>
+      <li>Typographie</li>
+      <li>Aussehen</li>
+    </ol>
+    <p>Positionierung kommt an erster Stelle, da es ein Element aus der normalen Verarbeitung eines Dokuments entfernen kann und Box Modell Styles &uuml;berschreiben kann. Das Box Modell kommt als n&auml;chstes, da es die Gr&ouml;&szlig;e und Platzierung der Komponente bestimmt.</p>
+    <p>Alles andere kommt hinterher, da es die Komponente im Inneren gestaltet, ohne die vorherigen beiden Sektionen zu beeinflussen</p>
+    <p>Eine komplette Liste der Eigenschaften und ihrer Reihenfolge kann bei <a href="http://twitter.github.com/recess">Recess</a> gefunden werden.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-import">
+  <div class="col">
+    <h3>Vermeide <code>@import</code></h3>
+    <p>Verglichen mit <code>&lt;link&gt;</code>s ist <code>@import</code> langsamer, f&uuml;hrt zu mehr Seitenanforderungen und kann andere unvorhergesehene Probleme verursachen. Vermeide es und benutze stattdessen andere Ans&auml;tze:</p>
+    <ul>
+      <li>Benutze mehrere <code>&lt;link&gt;</code> Elemente</li>
+      <li>Kompiliere das CSS mit einem Pr&auml;prozessor wie Sass oder Less in eine einzige Datei</li>
+      <li>Verbinde die CSS Dateien mit Tools, die von Rails, Jekyll oder anderen Umgebungen bereitgestellt werden</li>
+    </ul>
+    <p>Weitere Informationen finden sich in einem <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">Artikel von Steve Souders</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include css/import.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-media-queries">
+  <div class="col">
+    <h3>Platzierung von Medienabfragen</h3>
+    <p>Medienabfragen sollten so nahe wie m&ouml;glich an den f&uuml;r sie relevanten Regeln platziert werden. B&uuml;ndle sie nicht alle in einem separaten Stylesheet oder am Ende des Dokuments, andernfalls ist es einfach f&uuml;r andere, sie in Zukunft zu &uuml;bersehen. Hier ist eine typische Deklaration.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-prefixed-properties">
+  <div class="col">
+    <h3>Vorbestimmte Eigenschaften</h3>
+    <p>Wenn herstellervorbestimmte Eigenschaften verwendet werden, r&uuml;cke jede Eigenschaft so ein, dass die Deklarationswerte genau untereinander stehen, damit sie einfach bearbeitet werden k&ouml;nnen.</p>
+    <p>In Textmate, dr&uuml;cke <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). In Sublime Text 2, dr&uuml;cke <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) und <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-single-declarations">
+  <div class="col">
+    <h3>Einfache Deklarationen</h3>
+    <p>In F&auml;llen, in denen ein Regelsatz <strong>nur eine einzige Deklaration</strong> enth&auml;lt, sollte der Zeilenumbruch f&uuml;r leichtere Lesbarkeit und schnelleres Editieren entfernt werden.</p>
+    <p>Der Punkt ist hier Fehlererkennung - z.B. ein CSS Validator, der aussagt, dass ein Syntax Error in Zeile 183 vorliegt. Mit einer einzigen Deklaration kann man ihn nicht verfehlen. Bei vielen Deklarationen sind separate Zeilen ein Muss.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-shorthand">
+  <div class="col">
+    <h3>Kurznotation</h3>
+    <p>Bem&uuml;he dich, Kurznotationen nur in den F&auml;llen zu benutzen, wo alle verf&uuml;gbaren Werte explizit gesetzt werden m&uuml;ssen. &Uuml;berm&auml;&szlig;ig benutzte Eigenschaften sind beispielsweise:</p>
+    <ul>
+      <li><code>padding</code></li>
+      <li><code>margin</code></li>
+      <li><code>font</code></li>
+      <li><code>background</code></li>
+      <li><code>border</code></li>
+      <li><code>border-radius</code></li>
+    </ul>
+    <p>Oft m&uuml;ssen nicht alle Werte gesetzt werden, die eine Kurznotation repr&auml;sentiert. Zum Beispiel setzen HTML &Uuml;berschriften nur den oberen und unteren margin, also m&uuml;ssen nur diese beiden Werte &uuml;berschrieben werden, wenn es notwendig ist. Ausschweifende Benutzung von Kurznotation in Eigenschaften f&uuml;hrt oft zu schlampigem Code mit unn&ouml;tigen &Uuml;berschreibungen und ungewollten Nebeneffekten.</p>
+    <p>Im Mozilla Entwicklernetzwerk gibt es einen gro&szlig;artigen Artikel &uuml;ber <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">Kurznotationen f&uuml;r Eigenschaften</a> f&uuml;r diejenigen, die mit Notationen und deren Verhalten nicht vertraut sind.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-nesting">
+  <div class="col">
+    <h3>Verschachtelung in Less und Sass</h3>
+    <p>Vermeide unn&ouml;tige Verschachtelungen. Nur weil verschachtelt werden kann, hei&szlig;t das nicht, dass man es immer sollte. Ber&uuml;cksichtige Verschachtelung nur, wenn Styles im Elternelement g&uuml;ltig sein m&uuml;ssen und wenn mehrere Elemente zu verschachteln sind.</p>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-comments">
+  <div class="col">
+    <h3>Kommentare</h3>
+    <p>Der Code wird von Menschen geschrieben und gepflegt. Stelle sicher, dass dein Code anschaulich, gut kommentiert und f&uuml;r andere zug&auml;nglich ist. Gute Kommentare vermitteln Kontext oder Zweck. Wiederhole nicht einfach den Komponenten- oder Klassennamen.</p>
+    <p>Stelle sicher, dass in l&auml;ngeren Kommentaren komplette S&auml;tze geschrieben werden und k&uuml;rze S&auml;tze in generellen Anmerkungen.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/comments.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-classes">
+  <div class="col">
+    <h3>Klassennamen</h3>
+    <ul>
+      <li>Schreibe Klassennamen in Kleinbuchstaben und benutze Bindestriche (keine Unterstriche oder camelCase). Bindestriche dienen als nat&uuml;rliche Unterbrechungen in verbundenen Klassen (z.B. <code>.btn</code> und <code>.btn-danger</code>).</li>
+      <li>Vermeide ausschweifende und beliebige Kurznotationen. <code>.btn</code> ist eine n&uuml;tzliche Abk&uuml;rzung f&uuml;r <em>button</em>, aber <code>.s</code> ist bedeutungslos.</li>
+      <li>Benenne Klassen so kurz und b&uuml;ndig wie m&ouml;glich.</li>
+      <li>Benutze aussagekr&auml;ftige Namen; benutze zweck- oder strukturgebundene Namen, anstatt toll klingende.</li>
+      <li>W&auml;hle ein Klassenpr&auml;fix, das auf die n&auml;chsten Eltern oder Basisklasse verweist.</li>
+      <li>Benutze <code>.js-*</code> Klassen, um Verhalten anzudeuten (im Gegensatz zu einem Style), aber halte diese Klassen aus dem CSS heraus.</li>
+    </ul>
+    <p>Au&szlig;erdem ist es hilfreich, viele dieser Regeln beizubehalten, wenn Sass und Less Variablennamen erstellt werden.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-selectors">
+  <div class="col">
+    <h3>Selektoren</h3>
+    <ul>
+      <li>Benutze Klassen anstatt generische Element-Tags, um eine optimale Renderingperformance zu erreichen.</li>
+      <li>Vermeide mehrere Attributselektoren (z.B. <code>[class^="..."]</code>) bei  gew&ouml;hnlich verwendeten Komponenten. Es ist bekannt, dass die Browserperformance dadurch beeintr&auml;chtigt wird.</li>
+      <li>Halte Selektoren kurz und versuche die Anzahl der Elemente in jedem Selektor auf drei zu begrenzen.</li>
+      <li>Setze den Geltungsrahmen zum n&auml;chsten Elterntag <strong>nur</strong> wenn n&ouml;tig (z.B. wenn keine Pr&auml;fixklassen verwendet werden).</li>
+    </ul>
+    <p>Weitere informationen:</p>
+    <ul>
+      <li><a href="http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/">Geltungsrahmen von CSS Pr&auml;fixklassen</a></li>
+      <li><a href="http://markdotto.com/2012/03/02/stop-the-cascade/">Stopp das Verschachteln</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/selectors.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-organization">
+  <div class="col">
+    <h3>Aufbau</h3>
+    <ul>
+      <li>Ordne Codesektionen nach Komponenten an.</li>
+      <li>Entwickle eine konsistente Kommentierungshierarchie.</li>
+      <li>Benutze konsistente Leerzeichen zu deinem Vorteil, wenn einzelne Sektionen in einem gr&ouml;&szlig;eren Dokument voneinander getrennt werden.</li>
+      <li>Wenn mehrere CSS Dateien verwendet werden, teile sie nach Komponenten, anstatt Seiten auf. Seiten k&ouml;nnen neu angeordnet und Komponenten verschoben werden.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/organization-comments.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-editor-prefs">
+  <div class="col">
+    <h3>Editor Einstellungen</h3>
+    <p>Stelle deinen Editor folgenderma&szlig;en ein, um verbreitete Inkonsistenzen und dirty diffs zu vermeiden:</p>
+    <ul>
+      <li>Benutze Soft-Tabs mit zwei Leerzeichen</li>
+      <li>Schneide nachlaufende Leerzeichen beim Speichern ab.</li>
+      <li>Aktiviere UTF-8 codierung.</li>
+      <li>F&uuml;ge am Ende der Datei eine Leerzeile hinzu.</li>
+    </ul>
+    <p>Ziehe in Erw&auml;gung, diese Einstellungen in die <code>.editorconfig</code>-Datei deines Projektes zu schreiben. F&uuml;r ein Beispiel, <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">schaue dir diese Datei in Bootstrap an</a>. Mehr <a href="http://editorconfig.org">&uuml;ber EditorConfig erfahren</a>.</p>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+/* Schlechtes Beispiel */
+span { ... }
+.page-container #stream .stream-item .tweet .tweet-header .username { ... }
+.avatar { ... }
+
+/* Gutes Beispiel */
+.avatar { ... }
+.tweet-header .username { ... }
+.tweet .avatar { ... }

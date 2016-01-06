@@ -3,7 +3,7 @@
 .element-selected { ... }
 
 @media (min-width: 480px) {
-  .element { ...}
+  .element { ... }
   .element-avatar { ... }
   .element-selected { ... }
 }

@@ -1,0 +1,197 @@
+---
+layout: default
+---
+
+
+<div class="heading" id="toc">
+  <h2>Inhaltsverzeichnis CSS</h2>
+</div>
+<div class="section toc">
+  <div class="col">
+    <h4><a href="#css">CSS</a></h4>
+    <ul>
+      <li><a href="#css-syntax">CSS syntax</a></li>
+      <li><a href="#css-declaration-order">Reihenfolge der Deklarationen</a></li>
+      <li><a href="#css-import">Vermeide @import</a></li>
+      <li><a href="#css-media-queries">Platzierung von Medienabfragen</a></li>
+      <li><a href="#css-prefixed-properties">Vorbestimmte Eigenschaften</a></li>
+      <li><a href="#css-single-declarations">Einfache Deklarationen</a></li>
+      <li><a href="#css-shorthand">Kurznotation</a></li>
+      <li><a href="#css-nesting">Verschachtelung in Less und Sass</a></li>
+      <li><a href="#css-comments">Kommentare</a></li>
+      <li><a href="#css-classes">Klassen</a></li>
+      <li><a href="#css-selectors">Selektoren</a></li>
+      <li><a href="#css-organization">Aufbau</a></li>
+    </ul>
+  </div>
+  <div class="col">
+  </div>
+</div>
+
+<div class="heading" id="css">
+  <h2>CSS</h2>
+</div>
+
+<div class="section" id="css-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen – es ist die einzige Möglichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Lasse beim gruppieren von Selektoren jedem Selektor seine eigene Zeile.</li>
+      <li>In Fällen, in denen ein Regelsatz nur eine einzige Deklaration enthält, kann dieser in einer Zeile mit dem Selektor stehen.</li>
+      <li>Für bessere Lesbarkeit, füge ein Leerzeichen vor jeder öffnenden Klammer eines Deklarationsblocks hinzu.</li>
+      <li>Platziere schließende Klammern in einer neuen Zeile.</li>
+      <li>Füge ein Leerzeichen hinter jedem <code>:</code> für jede Deklaration hinzu.</li>
+      <li>Für ein genaueres Fehlerreporting sollte jede Deklaration in einer eigenen Zeile stehen.</li>
+      <li>Beende jede Deklaration mit einem Semikolon. Für die letzte Deklaration ist dies optional.</li>
+      <li>Kommagetrennte Eigenschaftswerte sollten ein Leerzeichen nach jedem Komma enthalten (z.B.<code>box-shadow</code>).</li>
+      <li>Füge Eigenschaftswerten oder Farbwerten keine führenden Nullen hinzu (z.B., <code>.5</code> anstatt <code>0.5</code> und <code>-.5px</code> anstatt <code>-0.5px</code>).</li>
+      <li>Schreibe Hexwerte klein, z.B. <code>#fff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
+      <li>Verwende kurze Hexwerte, wenn möglich. Z.B. <code>#fff</code> anstatt <code>#ffffff</code>.</li>
+      <li>Setze Attributwerte in Anführungszeichen, z.B. <code>input[type='text']</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Sie sind nur in einigen Fällen optional</a> und es ist eine Gewöhnung an Konsistenz.</li>
+      <li>Vermeide das Setzen von Einheiten für Nullwerte, z.B. <code>margin: 0;</code> anstatt <code>margin: 0px;</code>.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/syntax.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-declaration-order">
+  <div class="col">
+    <h3>Reihenfolge der Deklarationen</h3>
+    <p>Deklarationen sollten in der folgenden Reihenfolge gruppiert werden:</p>
+    <ol>
+      <li>Positionierung</li>
+      <li>Box Modell</li>
+      <li>Typographie</li>
+      <li>Aussehen</li>
+    </ol>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-import">
+  <div class="col">
+    <h3>Vermeide <code>@import</code></h3>
+    <p>Verglichen mit <code>&lt;link&gt;</code>s ist <code>@import</code> <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">langsamer</a>, führt zu mehr Seitenanforderungen und kann andere unvorhergesehene Probleme verursachen. Vermeide es und benutze stattdessen andere Ansätze:</p>
+    <ul>
+      <li>Benutze mehrere <code>&lt;link&gt;</code> Elemente</li>
+      <li>Kompiliere das CSS mit einem Präprozessor wie Sass oder Less in eine einzige Datei</li>
+      <li>Verbinde die CSS Dateien mit Tools, die von Rails, Jekyll oder anderen Umgebungen bereitgestellt werden</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include css/import.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-media-queries">
+  <div class="col">
+    <h3>Platzierung von Medienabfragen</h3>
+    <p>Medienabfragen sind am Ende des Dokuments zu platzieren.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-shorthand">
+  <div class="col">
+    <h3>Kurznotation</h3>
+    <p>Bemühe dich, Kurznotationen zu benutzen</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
+  </div>
+</div>
+
+<!-- <div class="section" id="css-nesting">
+  <div class="col">
+    <h3>Verschachtelung in Less und Sass</h3>
+    <p>Vermeide unnötige Verschachtelungen. Nur weil verschachtelt werden kann, heißt das nicht, dass man es immer sollte. Berücksichtige Verschachtelung nur, wenn Styles im Elternelement gültig sein müssen und wenn mehrere Elemente zu verschachteln sind.</p>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
+  </div>
+</div> -->
+
+<!-- <div class="section" id="css-comments">
+  <div class="col">
+    <h3>Kommentare</h3>
+    <p>Der Code wird von Menschen geschrieben und gepflegt. Stelle sicher, dass dein Code anschaulich, gut kommentiert und für andere zugänglich ist. Gute Kommentare vermitteln Kontext oder Zweck. Wiederhole nicht einfach den Komponenten- oder Klassennamen.</p>
+    <p>Stelle sicher, dass in längeren Kommentaren komplette Sätze geschrieben werden und kurze Sätze in generellen Anmerkungen.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/comments.css %}{% endhighlight %}
+  </div>
+</div> -->
+
+<div class="section" id="css-classes">
+  <div class="col">
+    <h3>Klassennamen (neu mit BEM)</h3>
+    <ul>
+      <li>Schreibe Klassennamen in Kleinbuchstaben und benutze Bindestriche (keine Unterstriche oder camelCase). Bindestriche dienen als natürliche Unterbrechungen in verbundenen Klassen (z.B. <code>.btn</code> und <code>.btn-danger</code>).</li>
+      <li>Vermeide ausschweifende und beliebige Kurznotationen. <code>.btn</code> ist eine nützliche Abkürzung für <em>button</em>, aber <code>.s</code> ist bedeutungslos.</li>
+      <li>Benenne Klassen so kurz und bündig wie möglich.</li>
+      <li>Benutze aussagekräftige Namen; benutze zweck- oder strukturgebundene Namen, anstatt toll klingende.</li>
+      <li>Wähle ein Klassenpräfix, das auf die nächsten Eltern oder Basisklasse verweist.</li>
+      <li>Benutze <code>.js-*</code> Klassen, um Verhalten anzudeuten (im Gegensatz zu einem Style), aber halte diese Klassen aus dem CSS heraus.</li>
+    </ul>
+    <p>Außerdem ist es hilfreich, viele dieser Regeln beizubehalten, wenn Sass und Less Variablennamen erstellt werden.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-selectors">
+  <div class="col">
+    <h3>Selektoren</h3>
+    <ul>
+      <li>Versuche Klassen statt generische Element-Tags zu nutzen, um eine optimale Renderingperformance zu erreichen.</li>
+      <li>Vermeide mehrere Attributselektoren (z.B. <code>[class^="..."]</code>) bei  gewöhnlich verwendeten Komponenten. Es ist bekannt, dass die Browserperformance dadurch beeinträchtigt wird.</li>
+      <li>Halte Selektoren kurz und versuche die Anzahl der Elemente in jedem Selektor auf drei zu begrenzen.</li>
+      <li>Setze den Geltungsrahmen zum nächsten Elterntag <strong>nur</strong> wenn nötig (z.B. wenn keine Präfixklassen verwendet werden).</li>
+    </ul>
+    <p>Weitere informationen:</p>
+    <ul>
+      <li><a href="http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/">Geltungsrahmen von CSS Präfixklassen</a></li>
+      <li><a href="http://markdotto.com/2012/03/02/stop-the-cascade/">Stopp das Verschachteln</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/selectors.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-organization">
+  <div class="col">
+    <h3>Aufbau</h3>
+    <ul>
+      <li>Ordne Codesektionen nach Komponenten an.</li>
+      <li>Entwickle eine konsistente Kommentierungshierarchie.</li>
+      <li>Benutze konsistente Leerzeichen zu deinem Vorteil, wenn einzelne Sektionen in einem größeren Dokument voneinander getrennt werden.</li>
+      <li>Wenn mehrere CSS Dateien verwendet werden, teile sie nach Komponenten, anstatt Seiten auf. Seiten können neu angeordnet und Komponenten verschoben werden.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/organization-comments.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-editor-prefs">
+  <div class="col">
+    <h3>Editor Einstellungen</h3>
+    <p>Stelle deinen Editor folgendermaßen ein, um verbreitete Inkonsistenzen und dirty diffs zu vermeiden:</p>
+    <ul>
+      <li>Benutze Soft-Tabs mit zwei Leerzeichen</li>
+      <li>Schneide nachlaufende Leerzeichen beim Speichern ab.</li>
+      <li>Aktiviere UTF-8 codierung.</li>
+      <li>Füge am Ende der Datei eine Leerzeile hinzu.</li>
+    </ul>
+    <p>Ziehe in Erwägung, diese Einstellungen in die <code>.editorconfig</code>-Datei deines Projektes zu schreiben. Für ein Beispiel, <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">schaue dir diese Datei in Bootstrap an</a>. Mehr <a href="http://editorconfig.org">über EditorConfig erfahren</a>.</p>
+  </div>
+</div>

@@ -1,0 +1,141 @@
+---
+layout: default
+---
+
+
+<div class="heading" id="toc">
+  <h2>Inhaltsverzeichnis HTML</h2>
+</div>
+<div class="section toc">
+  <div class="col">
+    <h4><a href="#html">HTML</a></h4>
+    <ul>
+      <li><a href="#html-syntax">Syntax</a></li>
+      <li><a href="#html-doctype">HTML5 doctype</a></li>
+      <li><a href="#html-encoding">Zeichenkodierung</a></li>
+      <li><a href="#html-style-script">CSS und JavaScript includes</a></li>
+      <li><a href="#html-attribute-order">Attributreihenfolge</a></li>
+      <li><a href="#html-boolean-attributes">Boolesche Attribute</a></li>
+      <li><a href="#html-reducing-markup">Reduzierung des Markup</a></li>
+    </ul>
+  </div>
+  <div class="col">
+  </div>
+</div>
+
+
+<div class="section" id="golden-rule">
+  <div class="col">
+    <h2>Goldene Regel</h2>
+    <p>Halte dich immer an diese definierten Regeln. Erstelle für etwaige Ergänzungen ein Issue im <a href="https://github.com/STUDITEMPS/code-guide" title="STUDITEMPS Code Guide Repository">Github Repository</a>. Erstellte Issues werden im nächsten Fach-Chapter besprochen.</p>
+  </div>
+  <div class="col">
+    <blockquote>
+      <p>Jede Zeile Code sollte so aussehen, als wenn sie von einer Person geschrieben wurde, egal, wieviele wirklich daran gearbeitet haben.</p>
+    </blockquote>
+  </div>
+</div>
+
+
+
+<div class="heading" id="html">
+  <h2>HTML</h2>
+</div>
+
+<div class="section" id="html-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen – es ist die einzige Möglichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Verschachtelte Elemente sollten einfach eingerückt werden (mit 2 Leerzeichen).</li>
+      <li>Verwende einfache Anführungszeichen für Attribute, keine Apostrophe.</li>
+      <li>Benutze keine abschließenden Schrägstriche in selbstschließenden Elementen – die <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">HTML5 Spezifikationen</a> besagen, dass sie optional sind.</li>
+      <li>Lasse keine schließenden Tags weg (z.B. <code>&lt;/li&gt;</code> oder <code>&lt;/body&gt;</code>).</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/syntax.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-doctype">
+  <div class="col">
+    <h3>HTML5 Doctype</h3>
+    <p>Setze für ein konsistentes Rendering in allen Browsern auf jeder HTML-Seite den HTML5 Doctype.</p>
+    <p>TO DO TO DO TO DOBemühe dich, die HTML Standards und Semantik beizubehalten, aber nicht zum Preis von Praktikabilität. Benutze so wenig Markup mit den wenigsten Komplexitäten, wie möglich.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/doctype.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-encoding">
+  <div class="col">
+    <h3>Zeichenkodierung</h3>
+    <p>Das richtige Rendering des Inhalts kann schnell und einfach mit einer expliziten Zeichenkodierung festgelegt werden. Wenn die Zeichenkoderung auf diese Art gesetzt wurde, kann auf die einzelne Deklaration in HTML Elementen verzeichtet werden, sofern sie mit der des Dokumentes übereinstimmen (normalerweise UTF-8).</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-style-script">
+  <div class="col">
+    <h3>CSS und JavaScript includes</h3>
+    <p>Nach den HTML5 Spezifikationen ist es nicht notwendig, einen <code>type</code> anzugeben, da CSS und JavaScript Dateien per Voreinstellung als <code>text/css</code> und <code>text/javascript</code> erwartet werden.</p>
+    <h4>HTML5 Spezifikation links</h4>
+    <ul>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Benutzung von link</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element">Benutzung von style</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element">Benutzung von script</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/style-script.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-attribute-order">
+  <div class="col">
+    <h3>Attributreihenfolge</h3>
+    <p>HTML Attribute sollten in der folgenden Ordnung erscheinen, um die Lesbarkeit zu erleichtern.</p>
+    <ul>
+      <li><code>id</code>, <code>name</code></li>
+      <li><code>class</code></li>
+      <li><code>data-*</code></li>
+      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
+      <li><code>title</code>, <code>alt</code></li>
+      <li><code>aria-*</code>, <code>role</code></li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/attribute-order.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-boolean-attributes">
+  <div class="col">
+    <h3>Boolesche Attribute</h3>
+    <p>Ein boolesches Attribut braucht keinen Wert.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/boolean-attributes.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-reducing-markup">
+  <div class="col">
+    <h3>Reduzierung des Markups</h3>
+    <p>Vermeide überflüssige Elemente beim Schreiben von HTML.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/reducing-markup.html %}{% endhighlight %}
+  </div>
+</div>
+
+<!-- <div class="section" id="html-javascript">
+  <div class="col">
+    <h3>JavaScript generiertes Markup</h3>
+    <p>Das Schreiben von Markup in JavaScript macht den Inhalt schwerer zu finden, schwerer zu editieren und weniger performant. Vermeide dies, wo möglich.</p>
+  </div>
+</div> -->

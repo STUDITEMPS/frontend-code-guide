@@ -1,7 +1,9 @@
-name:          Codeguide von @mdo
-description:   Richtlinien zur Entwicklung von flexiblem, wartbarem und best&auml;ndigem HTML und CSS.
-url:           http://BackendButters.github.io/code-guide/
+# Site Settings
+name: STUDITEMPS Code Guide
+description: Richtlinien zur Entwicklung von flexiblem, wartbarem und best&auml;ndigem HTML und CSS.
+url: http://BackendButters.github.io/code-guide/
 
-markdown:      rdiscount
-permalink:     pretty
-pygments:      rouge
+# Build Settings
+markdown: kramdown # rdiscount
+permalink: pretty
+highlighter: rouge

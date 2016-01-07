@@ -12,16 +12,14 @@ layout: default
     <ul>
       <li><a href="#css-syntax">CSS syntax</a></li>
       <li><a href="#css-declaration-order">Reihenfolge der Deklarationen</a></li>
-      <li><a href="#css-import">Vermeide @import</a></li>
-      <li><a href="#css-media-queries">Platzierung von Medienabfragen</a></li>
-      <li><a href="#css-prefixed-properties">Vorbestimmte Eigenschaften</a></li>
-      <li><a href="#css-single-declarations">Einfache Deklarationen</a></li>
-      <li><a href="#css-shorthand">Kurznotation</a></li>
-      <li><a href="#css-nesting">Verschachtelung in Less und Sass</a></li>
-      <li><a href="#css-comments">Kommentare</a></li>
-      <li><a href="#css-classes">Klassen</a></li>
+      <li><a href="#css-media-queries">Platzierung von Mediaqueries</a></li>
+      <li><a href="#css-shorthand">Shorthand Deklarationen</a></li>
+      <li><a href="#css-classnames">Klassennamen</a></li>
+      <li><a href="#css-bem">BEM Methodik</a></li>
+      <li><a href="#css-js-hooks">Javascript Hooks</a></li>
       <li><a href="#css-selectors">Selektoren</a></li>
-      <li><a href="#css-organization">Aufbau</a></li>
+      <li><a href="#css-file-structure">Struktur</a></li>
+      <li><a href="#css-editor-prefs">Editor Konfiguration</a></li>
     </ul>
   </div>
   <div class="col">
@@ -73,21 +71,6 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-import">
-  <div class="col">
-    <h3>Vermeide <code>@import</code></h3>
-    <p>Verglichen mit <code>&lt;link&gt;</code>s ist <code>@import</code> <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">langsamer</a>, führt zu mehr Seitenanforderungen und kann andere unvorhergesehene Probleme verursachen. Vermeide es und benutze stattdessen andere Ansätze:</p>
-    <ul>
-      <li>Benutze mehrere <code>&lt;link&gt;</code> Elemente</li>
-      <li>Kompiliere das CSS mit einem Präprozessor wie Sass oder Less in eine einzige Datei</li>
-      <li>Verbinde die CSS Dateien mit Tools, die von Rails, Jekyll oder anderen Umgebungen bereitgestellt werden</li>
-    </ul>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include css/import.html %}{% endhighlight %}
-  </div>
-</div>
-
 <div class="section" id="css-media-queries">
   <div class="col">
     <h3>Platzierung von Medienabfragen</h3>
@@ -129,7 +112,7 @@ layout: default
   </div>
 </div> -->
 
-<div class="section" id="css-classes">
+<div class="section" id="css-classnames">
   <div class="col">
     <h3>Klassennamen</h3>
     <ul>
@@ -145,7 +128,7 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-classes">
+<div class="section" id="css-bem">
   <div class="col">
     <h3>BEM Methodik</h3>
     <p>
@@ -157,7 +140,7 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-classes">
+<div class="section" id="css-js-hooks">
   <div class="col">
     <h3>Javascript Hooks</h3>
     <p>Nutze zur Selektierung von Elementen den Präfix <code>.js-</code>, um Funktion und Styling zu trennen. Beachte, Klassen mit <code>.js-</code>-Präfix nicht zu stylen.</p>
@@ -180,7 +163,7 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-organization">
+<div class="section" id="css-file-structure">
   <div class="col">
     <h3>Struktur</h3>
     <p>Nutze das <a href='http://patternlab.io/about.html'>ATOMIC Design Pattern</a>, um deine CSS Dateien zu strukturieren. Unsere Interpretation lautet wie folgt:</p>

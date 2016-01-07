@@ -193,13 +193,11 @@ pre code {
 
 .masthead {
   padding: 3rem 1rem;
-  color: rgba(255,255,255,.5);
   text-align: center;
-  background-color: #2E6888;
 }
 .masthead h1 {
-  color: #fff;
-  margin-bottom: .25rem;
+  color: #444;
+  margin: 1.5rem 0 .25rem;
 }
 
 .masthead h1 a {
@@ -217,12 +215,9 @@ pre code {
   font-size: 2rem;
 }
 .masthead-links a {
-  color: rgba(255,255,255,.5);
+  color: #45BCDA;
   text-decoration: none;
   transition: all .15s linear;
-}
-.masthead-links a:hover {
-  color: #fff;
 }
 
 @media (min-width: 38em) {
@@ -230,6 +225,10 @@ pre code {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
+}
+
+.masthead--sub-page {
+  padding: 1rem 0
 }
 
 /*

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de-de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STUDITEMPS Code Guide</title>
+    <meta name="description" content="Richtlinien zur Entwicklung von flexiblem, wartbarem und best&auml;ndigem HTML und CSS.">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Mono&subset=latin,cyrillic">
+    <link rel="stylesheet" href="/code-guide.css">
+
+  </head>
+  <body>
+
+    <header class="masthead">
+  <div class="container">
+    <span class="icon">&#9997;</span>
+    <h1>STUDITEMPS Code Guide</h1>
+    <p class="lead">Richtlinien zur Entwicklung von flexiblem, wartbarem und best&auml;ndigem HTML und CSS.</p>
+
+    <p class="masthead-links">
+      <a href="https://github.com/STUDITEMPS/code-guide">
+        <span class="icon icon-github-circled"></span>
+      </a>
+    </p>
+  </div>
+</header>
+
+
+    <div class="heading" id="toc">
+  <h2>Inhaltsverzeichnis CSS</h2>
+</div>
+<div class="section toc">
+  <div class="col">
+    <h4><a href="#css">CSS</a></h4>
+    <ul>
+      <li><a href="#css-syntax">CSS syntax</a></li>
+      <li><a href="#css-declaration-order">Reihenfolge der Deklarationen</a></li>
+      <li><a href="#css-import">Vermeide @import</a></li>
+      <li><a href="#css-media-queries">Platzierung von Medienabfragen</a></li>
+      <li><a href="#css-prefixed-properties">Vorbestimmte Eigenschaften</a></li>
+      <li><a href="#css-single-declarations">Einfache Deklarationen</a></li>
+      <li><a href="#css-shorthand">Kurznotation</a></li>
+      <li><a href="#css-nesting">Verschachtelung in Less und Sass</a></li>
+      <li><a href="#css-comments">Kommentare</a></li>
+      <li><a href="#css-classes">Klassen</a></li>
+      <li><a href="#css-selectors">Selektoren</a></li>
+      <li><a href="#css-organization">Aufbau</a></li>
+    </ul>
+  </div>
+  <div class="col">
+  </div>
+</div>
+
+<div class="heading" id="css">
+  <h2>CSS</h2>
+</div>
+
+<div class="section" id="css-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen – es ist die einzige Möglichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Lasse beim gruppieren von Selektoren jedem Selektor seine eigene Zeile.</li>
+      <li>In Fällen, in denen ein Regelsatz nur eine einzige Deklaration enthält, kann dieser in einer Zeile mit dem Selektor stehen.</li>
+      <li>Für bessere Lesbarkeit, füge ein Leerzeichen vor jeder öffnenden Klammer eines Deklarationsblocks hinzu.</li>
+      <li>Platziere schließende Klammern in einer neuen Zeile.</li>
+      <li>Füge ein Leerzeichen hinter jedem <code>:</code> für jede Deklaration hinzu.</li>
+      <li>Für ein genaueres Fehlerreporting sollte jede Deklaration in einer eigenen Zeile stehen.</li>
+      <li>Beende jede Deklaration mit einem Semikolon. Für die letzte Deklaration ist dies optional.</li>
+      <li>Kommagetrennte Eigenschaftswerte sollten ein Leerzeichen nach jedem Komma enthalten (z.B.<code>box-shadow</code>).</li>
+      <li>Füge Eigenschaftswerten oder Farbwerten keine führenden Nullen hinzu (z.B., <code>.5</code> anstatt <code>0.5</code> und <code>-.5px</code> anstatt <code>-0.5px</code>).</li>
+      <li>Schreibe Hexwerte klein, z.B. <code>#fff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
+      <li>Verwende kurze Hexwerte, wenn möglich. Z.B. <code>#fff</code> anstatt <code>#ffffff</code>.</li>
+      <li>Setze Attributwerte in Anführungszeichen, z.B. <code>input[type='text']</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Sie sind nur in einigen Fällen optional</a> und es ist eine Gewöhnung an Konsistenz.</li>
+      <li>Vermeide das Setzen von Einheiten für Nullwerte, z.B. <code>margin: 0;</code> anstatt <code>margin: 0px;</code>.</li>
+    </ul>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechtes CSS */</span>
+<span class="nc">.selector</span><span class="o">,</span> <span class="nc">.selector-secondary</span><span class="o">,</span> <span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span><span class="m">15px</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span><span class="m">0px</span> <span class="m">0px</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
+  <span class="nl">box-shadow</span><span class="p">:</span><span class="m">0px</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#CCC</span><span class="p">,</span><span class="nb">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#FFFFFF</span>
+<span class="p">}</span>
+
+<span class="nc">.span1</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">60px</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span> <span class="p">}</span>
+
+<span class="c">/* Gutes CSS */</span>
+<span class="nc">.selector</span><span class="o">,</span>
+<span class="nc">.selector-secondary</span><span class="o">,</span>
+<span class="nc">.selector</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">'</span><span class="nt">text</span><span class="err">'</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">.5</span><span class="p">);</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">2px</span> <span class="m">#ccc</span><span class="p">,</span> <span class="nb">inset</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">0</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.span1</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">60px</span> <span class="p">}</span></code></pre></figure>
+  </div>
+</div>
+
+<div class="section" id="css-declaration-order">
+  <div class="col">
+    <h3>Reihenfolge der Deklarationen</h3>
+    <p>Deklarationen sollten in der folgenden Reihenfolge gruppiert werden:</p>
+    <ol>
+      <li>Positionierung</li>
+      <li>Box Modell</li>
+      <li>Typographie</li>
+      <li>Aussehen</li>
+    </ol>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.declaration-order</span> <span class="p">{</span>
+  <span class="c">/* Positionierung */</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">z-index</span><span class="p">:</span> <span class="m">100</span><span class="p">;</span>
+
+  <span class="c">/* Boxmodell */</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+
+  <span class="c">/* Typographie */</span>
+  <span class="nl">font</span><span class="p">:</span> <span class="nb">normal</span> <span class="m">13px</span> <span class="s2">'Helvetica Neue'</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#333</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+
+  <span class="c">/* Aussehen */</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#f5f5f5</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#e5e5e5</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+
+  <span class="c">/* Sonstiges */</span>
+  <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+  </div>
+</div>
+
+<div class="section" id="css-import">
+  <div class="col">
+    <h3>Vermeide <code>@import</code></h3>
+    <p>Verglichen mit <code>&lt;link&gt;</code>s ist <code>@import</code> <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">langsamer</a>, führt zu mehr Seitenanforderungen und kann andere unvorhergesehene Probleme verursachen. Vermeide es und benutze stattdessen andere Ansätze:</p>
+    <ul>
+      <li>Benutze mehrere <code>&lt;link&gt;</code> Elemente</li>
+      <li>Kompiliere das CSS mit einem Präprozessor wie Sass oder Less in eine einzige Datei</li>
+      <li>Verbinde die CSS Dateien mit Tools, die von Rails, Jekyll oder anderen Umgebungen bereitgestellt werden</li>
+    </ul>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Verwende link-Elemente --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">'stylesheet'</span> <span class="na">href=</span><span class="s">'core.css'</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Vermeide @imports --&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+  <span class="k">@import</span> <span class="sx">url('more.css')</span><span class="p">;</span>
+<span class="nt">&lt;/style&gt;</span></code></pre></figure>
+  </div>
+</div>
+
+<div class="section" id="css-media-queries">
+  <div class="col">
+    <h3>Platzierung von Medienabfragen</h3>
+    <p>Medienabfragen sind am Ende des Dokuments zu platzieren.</p>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.element</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.element-avatar</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.element-selected</span> <span class="p">{</span>  <span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">480px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.element</span> <span class="p">{</span>  <span class="p">}</span>
+  <span class="nc">.element-avatar</span> <span class="p">{</span>  <span class="p">}</span>
+  <span class="nc">.element-selected</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+  </div>
+</div>
+
+<div class="section" id="css-shorthand">
+  <div class="col">
+    <h3>Kurznotation</h3>
+    <p>Bemühe dich, Kurznotationen zu benutzen, wenn immer dadurch der zu schreibende CSS-Code reduziert werden kann.</p>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechets Beispiel */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('image.jpg')</span><span class="p">;</span>
+  <span class="nl">border-top-left-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="nl">border-top-right-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Gutes Beispiel */</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">red</span> <span class="sx">url('image.jpg')</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+  </div>
+</div>
+
+<!-- <div class="section" id="css-nesting">
+  <div class="col">
+    <h3>Verschachtelung in Less und Sass</h3>
+    <p>Vermeide unnötige Verschachtelungen. Nur weil verschachtelt werden kann, heißt das nicht, dass man es immer sollte. Berücksichtige Verschachtelung nur, wenn Styles im Elternelement gültig sein müssen und wenn mehrere Elemente zu verschachteln sind.</p>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Ohne Schachtelung
+</span><span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">th</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+
+<span class="c1">// Mit Schachtelung
+</span><span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="p">{</span>
+  <span class="o">&gt;</span> <span class="nt">th</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+  <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+  </div>
+</div> -->
+
+<!-- <div class="section" id="css-comments">
+  <div class="col">
+    <h3>Kommentare</h3>
+    <p>Der Code wird von Menschen geschrieben und gepflegt. Stelle sicher, dass dein Code anschaulich, gut kommentiert und für andere zugänglich ist. Gute Kommentare vermitteln Kontext oder Zweck. Wiederhole nicht einfach den Komponenten- oder Klassennamen.</p>
+    <p>Stelle sicher, dass in längeren Kommentaren komplette Sätze geschrieben werden und kurze Sätze in generellen Anmerkungen.</p>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechtes Beispiel */</span>
+<span class="c">/* Modaler Header */</span>
+<span class="nc">.modal-header</span> <span class="p">{</span>
+  <span class="err">...</span>
+<span class="p">}</span>
+
+<span class="c">/* Gutes Beispiel */</span>
+<span class="c">/* Umschliessendes Element fuer .modal-title und .modal-close */</span>
+<span class="nc">.modal-header</span> <span class="p">{</span>
+  <span class="err">...</span>
+<span class="p">}</span></code></pre></figure>
+  </div>
+</div> -->
+
+<div class="section" id="css-classes">
+  <div class="col">
+    <h3>Klassennamen</h3>
+    <ul>
+      <li>Schreibe Klassennamen in Kleinbuchstaben und benutze Bindestriche (keine Unterstriche oder camelCase).</li>
+      <li>Vermeide ausschweifende und beliebige Kurznotationen. <code>.btn</code> ist eine nützliche Abkürzung für <em>button</em>, aber <code>.t</code> ist bedeutungslos.</li>
+      <li>Benenne Klassen so kurz und bündig wie möglich.</li>
+      <li>Benutze aussagekräftige Namen; benutze zweck- oder strukturgebundene Namen, anstatt toll klingende.</li>
+      <li>Schreibe selbstsprechende Klassen mit dem Präfix <code>.is-</code></li>
+    </ul>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechtes Beispiel */</span>
+<span class="nc">.t</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.red</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.header</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.btnGroup</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.hidden</span> <span class="p">{</span>  <span class="p">}</span>
+
+<span class="c">/* Gutes Beispiel */</span>
+<span class="nc">.tweet</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.important</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.tweet-header</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.btn-group</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.is-hidden</span> <span class="p">{</span>  <span class="p">}</span></code></pre></figure>
+  </div>
+</div>
+
+<div class="section" id="css-classes">
+  <div class="col">
+    <h3>BEM Methodik</h3>
+    <p>
+      Nutze für eine klare Benennung von Objekten die <a href='http://getbem.com/introduction/'>BEM Methodik</a>. Unsere Auslegung der Syntax schreibt sich wie folgt:
+    </p>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.block</span> <span class="p">{</span>  <span class="p">}</span>
+
+<span class="nc">.block__element</span> <span class="p">{</span>  <span class="p">}</span>
+
+<span class="nc">.block__element__element</span> <span class="p">{</span>  <span class="p">}</span>
+
+<span class="nc">.block--modifier</span> <span class="p">{</span>  <span class="p">}</span></code></pre></figure>
+  </div>
+</div>
+
+<div class="section" id="css-classes">
+  <div class="col">
+    <h3>Javascript Hooks</h3>
+    <p>Nutze zur Selektierung von Elementen den Präfix <code>.js-</code>, um Funktion und Styling zu trennen. Beachte, Klassen mit <code>.js-</code>-Präfix nicht zu stylen.</p>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'joblist js-joblist'</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.js-joblist'</span><span class="p">).</span><span class="nx">foo</span><span class="p">()</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+  </div>
+</div>
+
+<div class="section" id="css-selectors">
+  <div class="col">
+    <h3>Selektoren</h3>
+    <ul>
+      <li>Versuche Klassen statt generische Element-Tags zu nutzen, um eine optimale Renderingperformance zu erreichen und Styling von Markup zu trennen.</li>
+      <li>Halte Selektoren kurz und versuche die Anzahl der Elemente in jedem Selektor auf <strong>drei</strong> zu begrenzen.</li>
+    </ul>
+  </div>
+  <div class="col">
+    <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Schlechtes Beispiel */</span>
+<span class="nc">.foo</span> <span class="nt">span</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nf">#stream</span> <span class="nc">.stream-item</span> <span class="nc">.tweet</span>
+<span class="nf">#stream</span> <span class="nc">.stream-item</span> <span class="nc">.tweet-stream</span>
+<span class="nf">#stream</span> <span class="nc">.stream-item</span> <span class="nc">.tweet</span> <span class="nc">.username</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.tweet</span> <span class="nc">.avatar</span> <span class="p">{</span>  <span class="p">}</span>
+
+<span class="c">/* Gutes Beispiel */</span>
+<span class="nc">.foo</span> <span class="nc">.icon</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.tweet</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.tweet--stream</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.tweet__username</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="nc">.tweet__avatar</span> <span class="p">{</span>  <span class="p">}</span></code></pre></figure>
+  </div>
+</div>
+
+<div class="section" id="css-organization">
+  <div class="col">
+    <h3>Struktur</h3>
+    <p>Nutze das <a href='http://patternlab.io/about.html'>ATOMIC Design Pattern</a>, um deine CSS Dateien zu strukturieren. Unsere Interpretation lautet wie folgt:</p>
+    <ol>
+      <li><strong>Settings:</strong> Definition von Farben, Größen usw.</li>
+      <li><strong>Mixins:</strong> Eigene SCSS Mixins</li>
+      <li><strong>Utilities:</strong> Klassen für schnells layouten</li>
+      <li><strong>Atoms:</strong> HTML Elemente wie Buttons oder Links</li>
+      <li><strong>Molecules:</strong> UI Elemente, welche aus Atoms bestehen</li>
+      <li><strong>Modules:</strong> UI Elemente, welche aus Molecules bestehen</li>
+      <li><strong>Templates:</strong> Wiederverwendbare Layouts</li>
+      <li><strong>Pages:</strong> Seitenspezifische Layouts</li>
+    </ol>
+  </div>
+</div>
+
+<div class="section" id="css-editor-prefs">
+  <div class="col">
+    <h3>Editor Einstellungen</h3>
+    <p>Stelle deinen Editor folgendermaßen ein, um verbreitete Inkonsistenzen und dirty diffs zu vermeiden:</p>
+    <ul>
+      <li>Benutze Soft-Tabs mit zwei Leerzeichen</li>
+      <li>Schneide nachlaufende Leerzeichen beim Speichern ab.</li>
+      <li>Aktiviere UTF-8 codierung.</li>
+      <li>Füge am Ende der Datei eine Leerzeile hinzu.</li>
+    </ul>
+    <p>Ziehe in Erwägung, diese Einstellungen in die <code>.editorconfig</code>-Datei deines Projektes zu schreiben. Für ein Beispiel, <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">schaue dir diese Datei in Bootstrap an</a>. Mehr <a href="http://editorconfig.org">über EditorConfig erfahren</a>.</p>
+  </div>
+</div>
+
+
+    <footer class="footer">
+  <p><3</p>
+  <p>Zu großen Teilen inspiriert von <a href="https://github.com/necolas/idiomatic-css">Idiomatic CSS</a> und dem <a href="http://github.com/styleguide">GitHub Styleguide</a>. Made with all the love in the world by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>Open Sourced unter MIT Lizenz. Copyright 2016 <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>Übersetzt von <a href="https://github.com/BackendButters">BackendButters</a>. <a href="http://codeguide.co/">Originalversion.</a> <a href="https://github.com/BackendButters/code-guide">Diese Version auf GitHub.</a></p>
+  <ul class="quick-links">
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mdo&repo=code-guide&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="112px" height="20px"></iframe>
+    </li>
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mdo&repo=code-guide&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+    </li>
+  </ul>
+  <ul class="quick-links">
+    <li class="follow-btn">
+      <a href="https://twitter.com/mdo" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @mdo</a>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://BackendButters.github.io/code-guide/" data-count="horizontal" data-via="mdo">Tweet</a>
+    </li>
+  </ul>
+</footer>
+
+
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+
+  </body>
+</html>

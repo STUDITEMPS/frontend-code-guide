@@ -201,6 +201,13 @@ pre code {
   color: #fff;
   margin-bottom: .25rem;
 }
+
+.masthead h1 a {
+  color: inherit;
+}
+.masthead h1 a:hover {
+  text-decoration: none;
+}
 .masthead .icon {
   display: inline-block;
   font-size: 3rem;

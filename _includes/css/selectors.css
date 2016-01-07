@@ -1,9 +1,13 @@
 /* Schlechtes Beispiel */
-span { ... }
-.page-container #stream .stream-item .tweet .tweet-header .username { ... }
-.avatar { ... }
+.foo span {  }
+#stream .stream-item .tweet
+#stream .stream-item .tweet-stream
+#stream .stream-item .tweet .username {  }
+.tweet .avatar {  }
 
 /* Gutes Beispiel */
-.avatar { ... }
-.tweet-header .username { ... }
-.tweet .avatar { ... }
+.foo .icon {  }
+.tweet {  }
+.tweet--stream {  }
+.tweet__username {  }
+.tweet__avatar {  }

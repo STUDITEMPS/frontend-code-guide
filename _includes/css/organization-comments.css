@@ -2,7 +2,7 @@
  * Komponentensektion Ueberschrift
  */
 
-.element { ... }
+.element {  }
 
 
 /*
@@ -11,7 +11,7 @@
  * Manchmal muss optionaler Kontext fuer die gesamte Komponente eingefuegt werden. Mache es so wie hier, wenn es wichtig ist.
  */
 
-.element { ... }
+.element {  }
 
 /* Kontextuelle Subkomponente oder Attribut */
-.element-heading { ... }
+.element-heading {  }

@@ -131,19 +131,39 @@ layout: default
 
 <div class="section" id="css-classes">
   <div class="col">
-    <h3>Klassennamen (neu mit BEM)</h3>
+    <h3>Klassennamen</h3>
     <ul>
-      <li>Schreibe Klassennamen in Kleinbuchstaben und benutze Bindestriche (keine Unterstriche oder camelCase). Bindestriche dienen als natürliche Unterbrechungen in verbundenen Klassen (z.B. <code>.btn</code> und <code>.btn-danger</code>).</li>
-      <li>Vermeide ausschweifende und beliebige Kurznotationen. <code>.btn</code> ist eine nützliche Abkürzung für <em>button</em>, aber <code>.s</code> ist bedeutungslos.</li>
+      <li>Schreibe Klassennamen in Kleinbuchstaben und benutze Bindestriche (keine Unterstriche oder camelCase).</li>
+      <li>Vermeide ausschweifende und beliebige Kurznotationen. <code>.btn</code> ist eine nützliche Abkürzung für <em>button</em>, aber <code>.t</code> ist bedeutungslos.</li>
       <li>Benenne Klassen so kurz und bündig wie möglich.</li>
       <li>Benutze aussagekräftige Namen; benutze zweck- oder strukturgebundene Namen, anstatt toll klingende.</li>
-      <li>Wähle ein Klassenpräfix, das auf die nächsten Eltern oder Basisklasse verweist.</li>
-      <li>Benutze <code>.js-*</code> Klassen, um Verhalten anzudeuten (im Gegensatz zu einem Style), aber halte diese Klassen aus dem CSS heraus.</li>
+      <li>Schreibe selbstsprechende Klassen mit dem Präfix <code>.is-</code></li>
     </ul>
-    <p>Außerdem ist es hilfreich, viele dieser Regeln beizubehalten, wenn Sass und Less Variablennamen erstellt werden.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-classes">
+  <div class="col">
+    <h3>BEM Methodik</h3>
+    <p>
+      Nutze für eine klare Benennung von Objekten die <a href='http://getbem.com/introduction/'>BEM Methodik</a>. Unsere Auslegung der Syntax schreibt sich wie folgt:
+    </p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/bem_methodik.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-classes">
+  <div class="col">
+    <h3>Javascript Hooks</h3>
+    <p>Nutze zur Selektierung von Elementen den Präfix <code>.js-</code>, um Funktion und Styling zu trennen. Beachte, Klassen mit <code>.js-</code>-Präfix nicht zu stylen.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include css/javascript_hooks.html %}{% endhighlight %}
   </div>
 </div>
 

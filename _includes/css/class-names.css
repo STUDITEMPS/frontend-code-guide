@@ -1,9 +1,13 @@
 /* Schlechtes Beispiel */
-.t { ... }
-.red { ... }
-.header { ... }
+.t {  }
+.red {  }
+.header {  }
+.btnGroup {  }
+.hidden {  }
 
 /* Gutes Beispiel */
-.tweet { ... }
-.important { ... }
-.tweet-header { ... }
+.tweet {  }
+.important {  }
+.tweet-header {  }
+.btn-group {  }
+.is-hidden {  }

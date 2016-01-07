@@ -232,6 +232,41 @@ pre code {
   }
 }
 
+/*
+ * Index Nav
+ */
+
+.index-nav {
+  display: flex;
+}
+
+.index-nav__item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background: #45BCDA;
+  color: #fff;
+  font-size: 40px;
+}
+
+.index-nav__item > span {
+  display: inline-block;
+  padding: .35em 1em;
+  border: 2px #fff solid;
+  border-radius: .25em;
+  transition: .2s ease-in-out
+}
+
+.index-nav__item:hover {
+  text-decoration: none
+}
+
+.index-nav__item:hover > span {
+  text-decoration: none;
+  background: #3AAECB
+}
 
 /*
  * Sections

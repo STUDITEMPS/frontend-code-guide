@@ -1,9 +1,11 @@
 # Site Settings
 title: Code Guide
-description: Richtlinien zur Entwicklung von flexiblem, wartbarem und best&auml;ndigem HTML und CSS.
-url: http://BackendButters.github.io/code-guide/
+description: Richtlinien zur Entwicklung von flexiblem, wartbarem und beständigem HTML und CSS.
+baseurl: ""
+url: ""
 
 # Build Settings
 markdown: kramdown # rdiscount
 permalink: pretty
 highlighter: rouge
+exclude: ['README.md', 'LICENSE.md', 'package.json', 'gulpfile.js', 'node_modules']

@@ -1,0 +1,14 @@
+// Import Original code-guide.css
+@import "0-originals/code-guide.scss";
+@import "0-originals/syntax.scss";
+
+// Import Awesome Atomic Design SCSS
+
+@import "1-settings/-settings-index.scss";
+@import "2-mixins/-mixins-index.scss";
+@import "3-utilities/-utilities-index.scss";
+@import "4-atoms/-atoms-index.scss";
+@import "5-molecules/-molecules-index.scss";
+@import "6-modules/-modules-index.scss";
+@import "7-templates/-templates-index.scss";
+@import "8-pages/-pages-index.scss";

@@ -4,4 +4,4 @@ url:           http://BackendButters.github.io/code-guide/
 
 markdown:      rdiscount
 permalink:     pretty
-pygments:      false
+pygments:      rouge

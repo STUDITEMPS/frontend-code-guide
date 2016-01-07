@@ -195,7 +195,7 @@ pre code {
   padding: 3rem 1rem;
   color: rgba(255,255,255,.5);
   text-align: center;
-  background-color: #2a3440;
+  background-color: #2E6888;
 }
 .masthead h1 {
   color: #fff;
@@ -239,7 +239,12 @@ pre code {
 
 .heading {
   padding: 2rem 1rem 1.5rem;
-  background-color: #dfe1e8;
+  background-color: #45BCDA;
+}
+
+.heading h2 {
+  margin: 0;
+  color: #fff
 }
 
 @media (min-width: 38em) {

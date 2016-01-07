@@ -182,16 +182,18 @@ layout: default
 
 <div class="section" id="css-organization">
   <div class="col">
-    <h3>Aufbau</h3>
-    <ul>
-      <li>Ordne Codesektionen nach Komponenten an.</li>
-      <li>Entwickle eine konsistente Kommentierungshierarchie.</li>
-      <li>Benutze konsistente Leerzeichen zu deinem Vorteil, wenn einzelne Sektionen in einem größeren Dokument voneinander getrennt werden.</li>
-      <li>Wenn mehrere CSS Dateien verwendet werden, teile sie nach Komponenten, anstatt Seiten auf. Seiten können neu angeordnet und Komponenten verschoben werden.</li>
-    </ul>
-  </div>
-  <div class="col">
-    {% highlight css %}{% include css/organization-comments.css %}{% endhighlight %}
+    <h3>Struktur</h3>
+    <p>Nutze das <a href='http://patternlab.io/about.html'>ATOMIC Design Pattern</a>, um deine CSS Dateien zu strukturieren. Unsere Interpretation lautet wie folgt:</p>
+    <ol>
+      <li><strong>Settings:</strong> Definition von Farben, Größen usw.</li>
+      <li><strong>Mixins:</strong> Eigene SCSS Mixins</li>
+      <li><strong>Utilities:</strong> Klassen für schnells layouten</li>
+      <li><strong>Atoms:</strong> HTML Elemente wie Buttons oder Links</li>
+      <li><strong>Molecules:</strong> UI Elemente, welche aus Atoms bestehen</li>
+      <li><strong>Modules:</strong> UI Elemente, welche aus Molecules bestehen</li>
+      <li><strong>Templates:</strong> Wiederverwendbare Layouts</li>
+      <li><strong>Pages:</strong> Seitenspezifische Layouts</li>
+    </ol>
   </div>
 </div>
 

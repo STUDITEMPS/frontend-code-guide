@@ -2,9 +2,276 @@
 layout: default
 ---
 
-{% include header.html %}
+<section class="stcg__content" id="golden-rule">
+  <div class="stcg__content--text">
+    <h2>Goldene Regel</h2>
+    <p>Halte dich immer an diese definierten Regeln. Erstelle für etwaige Ergänzungen ein Issue im <a href="https://github.com/STUDITEMPS/code-guide" title="STUDITEMPS Code Guide Repository">Github Repository</a>. Erstellte Issues werden im nächsten Fach-Chapter besprochen.</p>
+  </div>
+  <div class="stcg__content--code">
+    <blockquote>
+      <p>Jede Zeile Code sollte so aussehen, als wenn sie von einer Person geschrieben wurde, egal, wieviele wirklich daran gearbeitet haben.</p>
+    </blockquote>
+  </div>
+</section>
 
-<div class='index-nav'>
-  <a class='index-nav__item' href='/html'><span>HTML</span></a>
-  <a class='index-nav__item' href='/css'><span>CSS</span></a>
-</div>
+<section class="stcg__content" id="html-syntax">
+  <div class="stcg__content--text">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen – es ist die einzige Möglichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Verschachtelte Elemente sollten einfach eingerückt werden (mit 2 Leerzeichen).</li>
+      <li>Verwende einfache Anführungszeichen für Attribute, keine Apostrophe.</li>
+      <li>Benutze keine abschließenden Schrägstriche in selbstschließenden Elementen – die <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">HTML5 Spezifikationen</a> besagen, dass sie optional sind.</li>
+      <li>Lasse keine schließenden Tags weg (z.B. <code>&lt;/li&gt;</code> oder <code>&lt;/body&gt;</code>).</li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/syntax.html %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="html-doctype">
+  <div class="stcg__content--text">
+    <h3>HTML5 Doctype</h3>
+    <p>Setze für ein konsistentes Rendering in allen Browsern auf jeder HTML-Seite den HTML5 Doctype.</p>
+    <p><span class="stcg-todo">Rework Text</span>Bemühe dich, die HTML Standards und Semantik beizubehalten, aber nicht zum Preis von Praktikabilität. Benutze so wenig Markup mit den wenigsten Komplexitäten, wie möglich.</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/doctype.html %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="html-encoding">
+  <div class="stcg__content--text">
+    <h3>Zeichenkodierung</h3>
+    <p>Das richtige Rendering des Inhalts kann schnell und einfach mit einer expliziten Zeichenkodierung festgelegt werden. Wenn die Zeichenkoderung auf diese Art gesetzt wurde, kann auf die einzelne Deklaration in HTML Elementen verzeichtet werden, sofern sie mit der des Dokumentes übereinstimmen (normalerweise UTF-8).</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="html-style-script">
+  <div class="stcg__content--text">
+    <h3>CSS und JavaScript includes</h3>
+    <p>Nach den HTML5 Spezifikationen ist es nicht notwendig, einen <code>type</code> anzugeben, da CSS und JavaScript Dateien per Voreinstellung als <code>text/css</code> und <code>text/javascript</code> erwartet werden.</p>
+    <h4>HTML5 Spezifikation links</h4>
+    <ul>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Benutzung von link</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element">Benutzung von style</a></li>
+      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element">Benutzung von script</a></li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/style-script.html %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="html-attribute-order">
+  <div class="stcg__content--text">
+    <h3>Attributreihenfolge</h3>
+    <p>HTML Attribute sollten in der folgenden Ordnung erscheinen, um die Lesbarkeit zu erleichtern.</p>
+    <ul>
+      <li><code>id</code>, <code>name</code></li>
+      <li><code>class</code></li>
+      <li><code>data-*</code></li>
+      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
+      <li><code>title</code>, <code>alt</code></li>
+      <li><code>aria-*</code>, <code>role</code></li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/attribute-order.html %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="html-boolean-attributes">
+  <div class="stcg__content--text">
+    <h3>Boolesche Attribute</h3>
+    <p>Ein boolesches Attribut braucht keinen Wert.</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/boolean-attributes.html %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="html-reducing-markup">
+  <div class="stcg__content--text">
+    <h3>Reduzierung des Markups</h3>
+    <p>Vermeide überflüssige Elemente beim Schreiben von HTML.</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/reducing-markup.html %}{% endhighlight %}
+  </div>
+</section>
+
+<!-- <section class="stcg__content" id="html-javascript">
+  <div class="stcg__content--text">
+    <h3>JavaScript generiertes Markup</h3>
+    <p>Das Schreiben von Markup in JavaScript macht den Inhalt schwerer zu finden, schwerer zu editieren und weniger performant. Vermeide dies, wo möglich.</p>
+  </div>
+</section> -->
+
+<section class="stcg__content" id="css-syntax">
+  <div class="stcg__content--text">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen – es ist die einzige Möglichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Lasse beim gruppieren von Selektoren jedem Selektor seine eigene Zeile.</li>
+      <li>In Fällen, in denen ein Regelsatz nur eine einzige Deklaration enthält, kann dieser in einer Zeile mit dem Selektor stehen.</li>
+      <li>Für bessere Lesbarkeit, füge ein Leerzeichen vor jeder öffnenden Klammer eines Deklarationsblocks hinzu.</li>
+      <li>Platziere schließende Klammern in einer neuen Zeile.</li>
+      <li>Füge ein Leerzeichen hinter jedem <code>:</code> für jede Deklaration hinzu.</li>
+      <li>Für ein genaueres Fehlerreporting sollte jede Deklaration in einer eigenen Zeile stehen.</li>
+      <li>Beende jede Deklaration mit einem Semikolon. Für die letzte Deklaration ist dies optional.</li>
+      <li>Kommagetrennte Eigenschaftswerte sollten ein Leerzeichen nach jedem Komma enthalten (z.B.<code>box-shadow</code>).</li>
+      <li>Füge Eigenschaftswerten oder Farbwerten keine führenden Nullen hinzu (z.B., <code>.5</code> anstatt <code>0.5</code> und <code>-.5px</code> anstatt <code>-0.5px</code>).</li>
+      <li>Schreibe Hexwerte klein, z.B. <code>#fff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
+      <li>Verwende kurze Hexwerte, wenn möglich. Z.B. <code>#fff</code> anstatt <code>#ffffff</code>.</li>
+      <li>Setze Attributwerte in Anführungszeichen, z.B. <code>input[type='text']</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Sie sind nur in einigen Fällen optional</a> und es ist eine Gewöhnung an Konsistenz.</li>
+      <li>Vermeide das Setzen von Einheiten für Nullwerte, z.B. <code>margin: 0;</code> anstatt <code>margin: 0px;</code>.</li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/syntax.css %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="css-declaration-order">
+  <div class="stcg__content--text">
+    <h3>Reihenfolge der Deklarationen</h3>
+    <p>Deklarationen sollten in der folgenden Reihenfolge gruppiert werden:</p>
+    <ol>
+      <li>Positionierung</li>
+      <li>Box Modell</li>
+      <li>Typographie</li>
+      <li>Aussehen</li>
+    </ol>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="css-media-queries">
+  <div class="stcg__content--text">
+    <h3>Platzierung von Medienabfragen</h3>
+    <p>Medienabfragen sind am Ende des Dokuments zu platzieren.</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="css-shorthand">
+  <div class="stcg__content--text">
+    <h3>Kurznotation</h3>
+    <p>Bemühe dich, Kurznotationen zu benutzen, wenn immer dadurch der zu schreibende CSS-Code reduziert werden kann.</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
+  </div>
+</section>
+
+<!-- <section class="stcg__content" id="css-nesting">
+  <div class="stcg__content--text">
+    <h3>Verschachtelung in Less und Sass</h3>
+    <p>Vermeide unnötige Verschachtelungen. Nur weil verschachtelt werden kann, heißt das nicht, dass man es immer sollte. Berücksichtige Verschachtelung nur, wenn Styles im Elternelement gültig sein müssen und wenn mehrere Elemente zu verschachteln sind.</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
+  </div>
+</section> -->
+
+<!-- <section class="stcg__content" id="css-comments">
+  <div class="stcg__content--text">
+    <h3>Kommentare</h3>
+    <p>Der Code wird von Menschen geschrieben und gepflegt. Stelle sicher, dass dein Code anschaulich, gut kommentiert und für andere zugänglich ist. Gute Kommentare vermitteln Kontext oder Zweck. Wiederhole nicht einfach den Komponenten- oder Klassennamen.</p>
+    <p>Stelle sicher, dass in längeren Kommentaren komplette Sätze geschrieben werden und kurze Sätze in generellen Anmerkungen.</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/comments.css %}{% endhighlight %}
+  </div>
+</section> -->
+
+<section class="stcg__content" id="css-classnames">
+  <div class="stcg__content--text">
+    <h3>Klassennamen</h3>
+    <ul>
+      <li>Schreibe Klassennamen in Kleinbuchstaben und benutze Bindestriche (keine Unterstriche oder camelCase).</li>
+      <li>Vermeide ausschweifende und beliebige Kurznotationen. <code>.btn</code> ist eine nützliche Abkürzung für <em>button</em>, aber <code>.t</code> ist bedeutungslos.</li>
+      <li>Benenne Klassen so kurz und bündig wie möglich.</li>
+      <li>Benutze aussagekräftige Namen; benutze zweck- oder strukturgebundene Namen, anstatt toll klingende.</li>
+      <li>Schreibe selbstsprechende Klassen mit dem Präfix <code>.is-</code></li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="css-bem">
+  <div class="stcg__content--text">
+    <h3>BEM Methodik</h3>
+    <p>
+      Nutze für eine klare Benennung von Objekten die <a href='http://getbem.com/introduction/'>BEM Methodik</a>. Unsere Auslegung der Syntax schreibt sich wie folgt:
+    </p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/bem_methodik.css %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="css-js-hooks">
+  <div class="stcg__content--text">
+    <h3>Javascript Hooks</h3>
+    <p>Nutze zur Selektierung von Elementen den Präfix <code>.js-</code>, um Funktion und Styling zu trennen. Beachte, Klassen mit <code>.js-</code>-Präfix nicht zu stylen.</p>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include css/javascript_hooks.html %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="css-selectors">
+  <div class="stcg__content--text">
+    <h3>Selektoren</h3>
+    <ul>
+      <li>Versuche Klassen statt generische Element-Tags zu nutzen, um eine optimale Renderingperformance zu erreichen und Styling von Markup zu trennen.</li>
+      <li>Halte Selektoren kurz und versuche die Anzahl der Elemente in jedem Selektor auf <strong>drei</strong> zu begrenzen.</li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/selectors.css %}{% endhighlight %}
+  </div>
+</section>
+
+<section class="stcg__content" id="css-file-structure">
+  <div class="stcg__content--text">
+    <h3>Struktur</h3>
+    <p>Nutze das <a href='http://patternlab.io/about.html'>ATOMIC Design Pattern</a>, um deine CSS Dateien zu strukturieren. Unsere Interpretation lautet wie folgt:</p>
+    <ol>
+      <li><strong>Settings:</strong> Definition von Farben, Größen usw.</li>
+      <li><strong>Mixins:</strong> Eigene SCSS Mixins</li>
+      <li><strong>Utilities:</strong> Klassen für schnells layouten</li>
+      <li><strong>Atoms:</strong> HTML Elemente wie Buttons oder Links</li>
+      <li><strong>Molecules:</strong> UI Elemente, welche aus Atoms bestehen</li>
+      <li><strong>Modules:</strong> UI Elemente, welche aus Molecules bestehen</li>
+      <li><strong>Templates:</strong> Wiederverwendbare Layouts</li>
+      <li><strong>Pages:</strong> Seitenspezifische Layouts</li>
+    </ol>
+  </div>
+</section>
+
+<section class="stcg__content" id="css-editor-prefs">
+  <div class="stcg__content--text">
+    <h3>Editor Einstellungen</h3>
+    <p>Stelle deinen Editor folgendermaßen ein, um verbreitete Inkonsistenzen und dirty diffs zu vermeiden:</p>
+    <ul>
+      <li>Benutze Soft-Tabs mit zwei Leerzeichen</li>
+      <li>Schneide nachlaufende Leerzeichen beim Speichern ab.</li>
+      <li>Aktiviere UTF-8 codierung.</li>
+      <li>Füge am Ende der Datei eine Leerzeile hinzu.</li>
+    </ul>
+    <p>Ziehe in Erwägung, diese Einstellungen in die <code>.editorconfig</code>-Datei deines Projektes zu schreiben.</p>
+  </div>
+</section>

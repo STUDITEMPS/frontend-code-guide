@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="de-de">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ site.title }}</title>
-    <meta name="description" content="{{ site.description }}">
+  {% include head.html %}
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Mono&subset=latin,cyrillic">
-    <link rel="stylesheet" href="/assets/css/main.css">
-
-  </head>
   <body>
 
-    {{ content }}
+    {% include sidebar.html %}
 
-    {% include js.html %}
+    <main id="top" class="stcg-main">
+      <header class="stcg-header">
+        <h1>Code Guide</h1>
+      </header>
+      {{ content }}
+    </main>
 
   </body>
+
+  <script src="/assets/js/smooth-scroll.js"></script>
+  <script>
+      smoothScroll.init({
+        speed: 500,
+        easing: 'easeOutCubic',
+        updateURL: false,
+      });
+  </script>
+
 </html>

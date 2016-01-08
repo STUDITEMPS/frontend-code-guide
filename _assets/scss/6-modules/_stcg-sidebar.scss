@@ -1,0 +1,62 @@
+.stcg__sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  flex: 0 0 260px;
+  width: 16.25rem;
+  min-height: 100vh;
+  // padding: 4.5rem 1.25rem 1.5rem;
+  border-right: 1px solid $gray;
+  overflow: auto;
+  -ms-overflow-style: none; // hide Scrollbar on IE 10+
+  overflow: -moz-scrollbars-none; // hide Scrollbar on Firefox
+
+  // Hide Scollbar on Chrome and Safari
+  &::-webkit-scrollbar { width: 0 !important }
+
+}
+
+.stcg__sidebar__logo {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $gray;
+
+  > a {
+    display: block;
+    margin: 0 auto;
+
+    > img { max-width: 200px; }
+
+  }
+
+}
+
+
+.stcg__sidebar__nav {
+  padding: 1.5rem;
+
+  h5 {
+    margin-bottom: 1rem;
+    color: $st-blue-light;
+  }
+
+  ul {
+    padding-left: 0;
+    font-size: .875rem;
+    font-weight: 600;
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 0;
+    padding: .25rem 0;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+}

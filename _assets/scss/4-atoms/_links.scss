@@ -1,0 +1,9 @@
+a {
+  color: inherit;
+  transition: color .1s ease-in;
+
+  &:hover {
+    color: $st-blue-light;
+  }
+
+}

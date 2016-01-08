@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-st-tech</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-st-tech" sketch:type="MSArtboardGroup">
+            <g id="Shape-+-Shape-+-Rectangle-path" sketch:type="MSLayerGroup" transform="translate(0.000000, 6.000000)">
+                <path d="M42.3032967,35.8681319 L5.53846154,35.8681319 C2.47912088,35.8681319 0,33.389011 0,30.3296703 L0,5.53846154 C0,2.47912088 2.47912088,0 5.53846154,0 L42.3032967,0 C45.3626374,0 47.8417582,2.47912088 47.8417582,5.53846154 L47.8417582,30.3824176 C47.8417582,33.389011 45.3626374,35.8681319 42.3032967,35.8681319 L42.3032967,35.8681319 Z" id="Shape" fill="#555254" sketch:type="MSShapeGroup"></path>
+                <path d="M10.9186813,28.6945055 L7.17362637,28.6945055 L11.3934066,17.9868132 L7.17362637,7.27912088 L10.9186813,7.27912088 L15.1384615,17.9868132 L10.9186813,28.6945055 Z" id="Shape" fill="#44BCDB" sketch:type="MSShapeGroup"></path>
+                <path d="M16.3135121,28.6815824 L16.3135121,25.3585055 L26.9157099,25.3585055 L26.9157099,28.6815824 L16.3135121,28.6815824 L16.3135121,28.6815824 Z" id="Rectangle-path" fill="#44BCDB" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -5,8 +5,7 @@ var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var imagemin    = require('gulp-imagemin');
 var pngquant    = require('imagemin-pngquant');
-var cache       = require('gulp-cache');
-var haml        = require('gulp-haml');
+var uglify      = require('gulp-uglify');
 
 var messages = {
   jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -37,14 +36,6 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
   });
 });
 
-// Compile HAML Files
-gulp.task('haml', function () {
-  return gulp.src('_assets/haml/index.haml')
-    .pipe(haml())
-    .pipe(gulp.dest('./tmp'));
-});
-
-
 // Compile files from _assets/sass into both _site/assets/css (for live injecting) and assets/css (for future jekyll builds)
 
 gulp.task('sass', function () {
@@ -59,28 +50,30 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('assets/css'));
 });
 
+// Compile files from _assets/js into both _site/assets/js (for live injecting) and assets/js (for future jekyll builds)
+
+gulp.task('uglify', function () {
+  return gulp.src('_assets/js/smooth-scroll.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('_site/assets/js'))
+    .pipe(browserSync.reload({stream:true}))
+    .pipe(gulp.dest('assets/js'));
+});
+
 // Minify Images from _assets/images into both _site/assets/images (for live injecting) and assets/images (for future jekyll builds)
 
 gulp.task('imagemin', function () {
   return gulp.src('_assets/images/**/*')
-    .pipe(cache(imagemin({
+    .pipe(imagemin({
       optimizationLevel: 3,
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       interlaced: true,
       use: [pngquant()]
-    })))
+    }))
     .pipe(gulp.dest('_site/assets/images'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('assets/images'))
-});
-
-// Copy Font Files from _assest/font to both _site/assets/font (for live injecting) and assets/font (for future jekyll builds)
-
-gulp.task('copyfonts', function () {
-  return gulp.src('_assets/fonts/**/*.{ttf,woff,eot,svg}')
-    .pipe(gulp.dest('assets/fonts'))
-    .pipe(gulp.dest('_site/assets/fonts'))
 });
 
 // Watch _assets/**/* files for changes & recompile
@@ -89,7 +82,7 @@ gulp.task('copyfonts', function () {
 gulp.task('watch', function () {
   gulp.watch('_assets/scss/**/*', ['sass']);
   gulp.watch('_assets/images/**/*', ['imagemin']);
-  gulp.watch('_assets/fonts/**/*.{ttf,woff,eot,svg}', ['copyfonts']);
+  gulp.watch('_assets/js/**/*', ['uglify']);
   gulp.watch(['*.html', '_layouts/**/*', '_includes/**/*'], ['jekyll-rebuild']);
 });
 

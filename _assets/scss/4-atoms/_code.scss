@@ -1,0 +1,37 @@
+code,
+pre {
+  font-family: $code-fonts;
+}
+
+code {
+  padding: .125rem .25rem;
+  font-size: .875rem;
+  color: $red-code;
+  background-color: $gray-light;
+  border-radius: 3px;
+}
+
+pre {
+  display: block;
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre;
+  white-space: pre-wrap;
+
+  code {
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+  }
+
+}
+
+.highlight {
+  margin: 0;
+
+  > pre { margin-bottom: 0; }
+
+  + .highlight { margin-top: 1rem; }
+
+}

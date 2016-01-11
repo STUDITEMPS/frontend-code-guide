@@ -7,6 +7,20 @@
     </ul>
   </div>
   <div class="stcg__content--code">
-    {% highlight css %}{% include css/code/selectors.css %}{% endhighlight %}
+{% highlight css %}
+/* Schlechtes Beispiel */
+.foo span {  }
+#stream .stream-item .tweet
+#stream .stream-item .tweet-stream
+#stream .stream-item .tweet .username {  }
+.tweet .avatar {  }
+
+/* Gutes Beispiel */
+.foo .icon {  }
+.tweet {  }
+.tweet--stream {  }
+.tweet__username {  }
+.tweet__avatar {  }
+{% endhighlight %}
   </div>
 </section>

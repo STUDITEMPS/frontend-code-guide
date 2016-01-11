@@ -5,6 +5,18 @@
     <p>Stelle sicher, dass in längeren Kommentaren komplette Sätze geschrieben werden und kurze Sätze in generellen Anmerkungen.</p>
   </div>
   <div class="stcg__content--code">
-    {% highlight css %}{% include css/code/comments.css %}{% endhighlight %}
+{% highlight css %}
+/* Schlechtes Beispiel */
+/* Modaler Header */
+.modal-header {
+  ...
+}
+
+/* Gutes Beispiel */
+/* Umschliessendes Element fuer .modal-title und .modal-close */
+.modal-header {
+  ...
+}
+{% endhighlight %}
   </div>
 </section>

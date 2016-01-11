@@ -4,6 +4,16 @@
     <p>Vermeide unnötige Verschachtelungen. Nur weil verschachtelt werden kann, heißt das nicht, dass man es immer sollte. Berücksichtige Verschachtelung nur, wenn Styles im Elternelement gültig sein müssen und wenn mehrere Elemente zu verschachteln sind.</p>
   </div>
   <div class="stcg__content--code">
-    {% highlight scss %}{% include css/code/nesting.scss %}{% endhighlight %}
+{% highlight scss %}
+// Ohne Schachtelung
+.table > thead > tr > th { … }
+.table > thead > tr > td { … }
+
+// Mit Schachtelung
+.table > thead > tr {
+  > th { … }
+  > td { … }
+}
+{% endhighlight %}
   </div>
 </section>

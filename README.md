@@ -38,3 +38,7 @@ Um dieses Projekt bestmöglich lokal zu nutzen musst du folgendes installieren
 #### 11.01.2016
 
 - Changelog initiiert
+
+## Lizenz
+
+Der [Code Guide](https://github.com/mdo/code-guide) wurde unter der MIT Lizenz, Copyright 2014, von [@mdo](https://twitter.com/mdo) veröffentlich.

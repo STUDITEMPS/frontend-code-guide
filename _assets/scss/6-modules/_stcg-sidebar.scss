@@ -33,9 +33,8 @@
 
 }
 
-
 .stcg__sidebar__nav {
-  padding: 1.5rem;
+  padding: 4.5rem 1.5rem 1.5rem;
 
   h5 {
     margin-bottom: 1rem;
@@ -58,5 +57,7 @@
     display: block;
     text-decoration: none;
   }
+
+  + .stcg__sidebar__nav { padding-top: 0; }
 
 }

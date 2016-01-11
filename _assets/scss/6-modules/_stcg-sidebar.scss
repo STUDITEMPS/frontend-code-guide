@@ -24,7 +24,8 @@
   border-bottom: 1px solid $gray;
 
   > a {
-    display: block;
+    display: flex;
+    align-items: center;
     margin: 0 auto;
 
     > img { max-width: 200px; }

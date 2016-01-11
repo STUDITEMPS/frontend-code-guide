@@ -12,5 +12,27 @@
       <li><strong>Templates:</strong> Wiederverwendbare Layouts</li>
       <li><strong>Pages:</strong> Seitenspezifische Layouts</li>
     </ol>
+    <p>Wenn externe CSS REsourcen wie bspw. die <code>normalize.css</code> eingesetzt werden, dann werden diese im Ordner <code>0-vendor</code> gespeichert.</p>
+    <p>Innerhalb jedes Ordners werden die einzelnen SCSS Dateien mittels einer Index-Datei importiert. Im Hauptverzeichnis importiert die <code>main.scss</code> alle einzelnen Index-Dateien.</p>
+  </div>
+  <div class="stcg__content--code">
+{% highlight text %}
+scss/
+├── 0-vendor
+|   ├── _-vendor-index.scss
+|   └── _normalize.css
+├── 1-settings
+|   ├── _-setrings-index.scss
+|   ├── _colors.scss
+|   └── _fonts.scss
+├── 2-mixins
+├── 3-utilities
+├── 4-atoms
+├── 5-molecules
+├── 6-modules
+├── 7-templates
+├── 8-pages
+└── main.scss
+{% endhighlight %}
   </div>
 </section>

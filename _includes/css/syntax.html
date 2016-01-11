@@ -1,34 +1,36 @@
 <section class="stcg__content" id="css-syntax">
   <div class="stcg__content--text">
-    <h3>Syntax</h3>
+    <h3>CSS Syntax</h3>
     <ul>
-      <li>Benutze Soft-Tabs mit 2 Leerzeichen – es ist die einzige Möglichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
-      <li>Lasse beim gruppieren von Selektoren jedem Selektor seine eigene Zeile.</li>
+      <li>Benutze „Soft-Tabs” mit 2 Leerzeichen um zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Verwende beim Gruppieren von Selektoren für jeden Selektor eine eigene Zeile.</li>
       <li>In Fällen, in denen ein Regelsatz nur eine einzige Deklaration enthält, kann dieser in einer Zeile mit dem Selektor stehen.</li>
       <li>Für bessere Lesbarkeit, füge ein Leerzeichen vor jeder öffnenden Klammer eines Deklarationsblocks hinzu.</li>
-      <li>Platziere schließende Klammern in einer neuen Zeile.</li>
-      <li>Füge ein Leerzeichen hinter jedem <code>:</code> für jede Deklaration hinzu.</li>
+      <li>Platziere schließende Klammern in eine neue Zeile.</li>
+      <li>Füge ein Leerzeichen hinter jedem <code>:</code> einer Deklaration hinzu.</li>
       <li>Für ein genaueres Fehlerreporting sollte jede Deklaration in einer eigenen Zeile stehen.</li>
-      <li>Beende jede Deklaration mit einem Semikolon. Für die letzte Deklaration ist dies optional.</li>
+      <li>Beende jede Deklaration mit einem Semikolon. Für die letzte Deklaration ist dieses optional.</li>
       <li>Kommagetrennte Eigenschaftswerte sollten ein Leerzeichen nach jedem Komma enthalten (z.B.<code>box-shadow</code>).</li>
       <li>Füge Eigenschaftswerten oder Farbwerten keine führenden Nullen hinzu (z.B., <code>.5</code> anstatt <code>0.5</code> und <code>-.5px</code> anstatt <code>-0.5px</code>).</li>
-      <li>Schreibe Hexwerte klein, z.B. <code>#fff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
+      <li>Schreibe Hexwerte klein, z.B. <code>#fff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie einzigartigere Formen aufweisen.</li>
       <li>Verwende kurze Hexwerte, wenn möglich. Z.B. <code>#fff</code> anstatt <code>#ffffff</code>.</li>
-      <li>Setze Attributwerte in Anführungszeichen, z.B. <code>input[type='text']</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Sie sind nur in einigen Fällen optional</a> und es ist eine Gewöhnung an Konsistenz.</li>
+      <li>Setze Attributwerte in Anführungszeichen, z.B. <code>input[type='text']</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">In einigen Fällen sind diese optional</a>, führen aber zu einem konsistenten Code.</li>
       <li>Vermeide das Setzen von Einheiten für Nullwerte, z.B. <code>margin: 0;</code> anstatt <code>margin: 0px;</code>.</li>
     </ul>
   </div>
   <div class="stcg__content--code">
 {% highlight css %}
 /* Schlechtes CSS */
-.selector, .selector-secondary, .selector[type=text] {
+.selector, .selector-secondary, .selector[type="text"] {
   padding:15px;
   margin:0px 0px 15px;
   background-color:rgba(0, 0, 0, 0.5);
   box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF
 }
 
-.span1 { width: 60px; height: 100px }
+.span1 {
+  width: 60px;
+}
 
 /* Gutes CSS */
 .selector,

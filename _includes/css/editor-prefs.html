@@ -1,13 +1,30 @@
 <section class="stcg__content" id="css-editor-prefs">
   <div class="stcg__content--text">
-    <h3>Editor Einstellungen</h3>
+    <h3>Editor Konfiguration</h3>
     <p>Stelle deinen Editor folgendermaßen ein, um verbreitete Inkonsistenzen und dirty diffs zu vermeiden:</p>
     <ul>
-      <li>Benutze Soft-Tabs mit zwei Leerzeichen</li>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen</li>
       <li>Schneide nachlaufende Leerzeichen beim Speichern ab.</li>
       <li>Aktiviere UTF-8 codierung.</li>
       <li>Füge am Ende der Datei eine Leerzeile hinzu.</li>
     </ul>
     <p>Ziehe in Erwägung, diese Einstellungen in die <code>.editorconfig</code>-Datei deines Projektes zu schreiben.</p>
+  </div>
+  <div class="stcg__content--code">
+{% highlight text %}
+# editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+{% endhighlight %}
   </div>
 </section>

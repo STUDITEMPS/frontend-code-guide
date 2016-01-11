@@ -2,7 +2,7 @@
   <div class="stcg__content--text">
     <h3>Selektoren</h3>
     <ul>
-      <li>Versuche Klassen statt generische Element-Tags zu nutzen, um eine optimale Renderingperformance zu erreichen und Styling von Markup zu trennen.</li>
+      <li>Versuche Klassen statt generische Element-Tags zu nutzen um eine optimale Renderingperformance zu erreichen und um das Styling vom Markup zu trennen.</li>
       <li>Halte Selektoren kurz und versuche die Anzahl der Elemente in jedem Selektor auf <strong>drei</strong> zu begrenzen.</li>
     </ul>
   </div>
@@ -10,8 +10,8 @@
 {% highlight css %}
 /* Schlechtes Beispiel */
 .foo span {  }
-#stream .stream-item .tweet
-#stream .stream-item .tweet-stream
+#stream .stream-item .tweet,
+#stream .stream-item .tweet-stream,
 #stream .stream-item .tweet .username {  }
 .tweet .avatar {  }
 

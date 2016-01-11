@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Seitentitel</title>
-  </head>
-  <body>
-    <img src='images/company-logo.png' alt='Company'>
-    <h1 class='hello-world'>Hello, world!</h1>
-  </body>
-</html>
+<section class="stcg__content" id="html-syntax">
+  <div class="stcg__content--text">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen – es ist die einzige Möglichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Verschachtelte Elemente sollten einfach eingerückt werden (mit 2 Leerzeichen).</li>
+      <li>Verwende einfache Anführungszeichen für Attribute, keine Apostrophe.</li>
+      <li>Benutze keine abschließenden Schrägstriche in selbstschließenden Elementen – die <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">HTML5 Spezifikationen</a> besagen, dass sie optional sind.</li>
+      <li>Lasse keine schließenden Tags weg (z.B. <code>&lt;/li&gt;</code> oder <code>&lt;/body&gt;</code>).</li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/code/syntax.html %}{% endhighlight %}
+  </div>
+</section>

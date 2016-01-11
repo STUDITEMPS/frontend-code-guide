@@ -1,7 +1,17 @@
-<a id='...' class='...' data-content='foo' href='#'>
-  Beispiel link
-</a>
-
-<input class='form-control' type='text'>
-
-<img src='...' alt='...'>
+<section class="stcg__content" id="html-attribute-order">
+  <div class="stcg__content--text">
+    <h3>Attributreihenfolge</h3>
+    <p>HTML Attribute sollten in der folgenden Ordnung erscheinen, um die Lesbarkeit zu erleichtern.</p>
+    <ul>
+      <li><code>id</code>, <code>name</code></li>
+      <li><code>class</code></li>
+      <li><code>data-*</code></li>
+      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
+      <li><code>title</code>, <code>alt</code></li>
+      <li><code>aria-*</code>, <code>role</code></li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight html %}{% include html/code/attribute-order.html %}{% endhighlight %}
+  </div>
+</section>

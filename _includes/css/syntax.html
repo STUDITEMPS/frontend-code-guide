@@ -1,0 +1,24 @@
+<section class="stcg__content" id="css-syntax">
+  <div class="stcg__content--text">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Benutze Soft-Tabs mit 2 Leerzeichen – es ist die einzige Möglichkeit zu garantieren, dass der Code in allen Umgebungen gleich gerendert wird.</li>
+      <li>Lasse beim gruppieren von Selektoren jedem Selektor seine eigene Zeile.</li>
+      <li>In Fällen, in denen ein Regelsatz nur eine einzige Deklaration enthält, kann dieser in einer Zeile mit dem Selektor stehen.</li>
+      <li>Für bessere Lesbarkeit, füge ein Leerzeichen vor jeder öffnenden Klammer eines Deklarationsblocks hinzu.</li>
+      <li>Platziere schließende Klammern in einer neuen Zeile.</li>
+      <li>Füge ein Leerzeichen hinter jedem <code>:</code> für jede Deklaration hinzu.</li>
+      <li>Für ein genaueres Fehlerreporting sollte jede Deklaration in einer eigenen Zeile stehen.</li>
+      <li>Beende jede Deklaration mit einem Semikolon. Für die letzte Deklaration ist dies optional.</li>
+      <li>Kommagetrennte Eigenschaftswerte sollten ein Leerzeichen nach jedem Komma enthalten (z.B.<code>box-shadow</code>).</li>
+      <li>Füge Eigenschaftswerten oder Farbwerten keine führenden Nullen hinzu (z.B., <code>.5</code> anstatt <code>0.5</code> und <code>-.5px</code> anstatt <code>-0.5px</code>).</li>
+      <li>Schreibe Hexwerte klein, z.B. <code>#fff</code>. Kleingeschriebene Buchstaben sind beim Lesen eines Dokumentes einfacher zu unterscheiden, da sie mehr einzigartige Formen aufweisen.</li>
+      <li>Verwende kurze Hexwerte, wenn möglich. Z.B. <code>#fff</code> anstatt <code>#ffffff</code>.</li>
+      <li>Setze Attributwerte in Anführungszeichen, z.B. <code>input[type='text']</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">Sie sind nur in einigen Fällen optional</a> und es ist eine Gewöhnung an Konsistenz.</li>
+      <li>Vermeide das Setzen von Einheiten für Nullwerte, z.B. <code>margin: 0;</code> anstatt <code>margin: 0px;</code>.</li>
+    </ul>
+  </div>
+  <div class="stcg__content--code">
+    {% highlight css %}{% include css/code/syntax.css %}{% endhighlight %}
+  </div>
+</section>

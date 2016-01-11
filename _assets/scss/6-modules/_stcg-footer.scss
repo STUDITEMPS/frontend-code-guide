@@ -1,0 +1,42 @@
+.stcg__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  background-color: $st-gray;
+
+  a {
+    color: $gray-light;
+    text-decoration: none;
+
+    &:hover { color: $st-blue-light; }
+
+  }
+
+}
+
+@media (min-width: 80em) {
+
+  .stcg__footer {
+    padding-right: 4.5rem;
+    padding-left: 4.5rem;
+  }
+
+}
+
+@media (min-width: 100em) {
+
+  .stcg__footer {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+
+}
+
+@media (min-width: 125em) {
+
+  .stcg__footer {
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+
+}

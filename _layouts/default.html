@@ -8,21 +8,17 @@
     {% include sidebar.html %}
 
     <main id="top" class="stcg-main">
-      <header class="stcg-header">
-        <h1>Code Guide</h1>
-      </header>
+
+      {% include header.html %}
+
       {{ content }}
+
+      {% include footer.html %}
+
     </main>
 
   </body>
 
-  <script src="/assets/js/smooth-scroll.js"></script>
-  <script>
-      smoothScroll.init({
-        speed: 500,
-        easing: 'easeOutCubic',
-        updateURL: false,
-      });
-  </script>
+  {% include javascript.html %}
 
 </html>

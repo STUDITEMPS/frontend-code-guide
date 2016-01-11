@@ -4,12 +4,25 @@
   padding: 1.5rem 3rem;
   background-color: $st-gray;
 
+  p {
+    margin-bottom: 0;
+    color: $gray-light;
+
+    > span { color: $red; }
+
+  }
+
   a {
     color: $gray-light;
     text-decoration: none;
 
     &:hover { color: $st-blue-light; }
 
+  }
+
+  div:last-of-type {
+
+    p { text-align: right; }
   }
 
 }

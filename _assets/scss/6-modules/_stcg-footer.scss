@@ -6,10 +6,12 @@
 
   p {
     margin-bottom: 0;
+    font-size: .875rem;
     color: $gray-light;
 
     > span {
       color: $red;
+      cursor: none;
       animation: heartbeat 1s linear infinite;
 
       &:hover {

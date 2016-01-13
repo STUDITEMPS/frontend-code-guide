@@ -1,13 +1,13 @@
 {
-  "name": "Code-Guide",
-  "version": "0.0.9",
-  "description": "Studitemps Code Guide",
+  "name": "Front End Code Guide",
+  "version": "0.9.0",
+  "description": "Studitemps Front End Code Guide",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "STUDITEMPS.TECH",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^1.3.7",
     "gulp": "^3.8.8",

@@ -35,6 +35,10 @@ Um dieses Projekt bestmöglich lokal zu nutzen musst du folgendes installieren
 
 ## Changelog
 
+#### 13.01.2016
+
+- Tab Naviagion für Code-Ansicht eingesetzt
+
 #### 11.01.2016
 
 - Changelog initiiert

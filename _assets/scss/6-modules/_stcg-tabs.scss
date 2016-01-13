@@ -55,7 +55,9 @@
 #tab-html-17:checked ~ .stcg__tabs__content #tab-html-17-l,
 #tab-html-18:checked ~ .stcg__tabs__content #tab-html-18-l,
 #tab-html-19:checked ~ .stcg__tabs__content #tab-html-19-l,
-#tab-html-20:checked ~ .stcg__tabs__content #tab-html-20-l {
+#tab-html-20:checked ~ .stcg__tabs__content #tab-html-20-l,
+#tab-css-1:checked ~ .stcg__tabs__content #tab-css-1-l,
+#tab-css-2:checked ~ .stcg__tabs__content #tab-css-2-l {
     color: $st-gray;
     cursor: default;
 }
@@ -79,6 +81,8 @@
 #tab-html-17:checked ~ .stcg__tabs__content #tab-html-17-p,
 #tab-html-18:checked ~ .stcg__tabs__content #tab-html-18-p,
 #tab-html-19:checked ~ .stcg__tabs__content #tab-html-19-p,
-#tab-html-20:checked ~ .stcg__tabs__content #tab-html-20-p {
+#tab-html-20:checked ~ .stcg__tabs__content #tab-html-20-p,
+#tab-css-1:checked ~ .stcg__tabs__content #tab-css-1-p,
+#tab-css-2:checked ~ .stcg__tabs__content #tab-css-2-p {
     display: block;
 }

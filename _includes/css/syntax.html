@@ -19,9 +19,17 @@
     </ul>
   </div>
   <div class="stcg__content--code">
+    <div class="stcg__tabs">
+      <input class="stcg__tabs__input" type="radio" name="css-syntax" id="tab-css-1" checked />
+      <input class="stcg__tabs__input" type="radio" name="css-syntax" id="tab-css-2" />
+      <div class="stcg__tabs__content">
+        <label for="tab-css-1" id="tab-css-1-l" class="stcg__tabs__label">CSS</label>
+        <label for="tab-css-2" id="tab-css-2-l" class="stcg__tabs__label">SCSS</label>
+        <div id="tab-css-1-p" class="stcg__tabs__panel">
+
 {% highlight css %}
 /* Schlechtes CSS */
-.selector, .selector-secondary, .selector[type="text"] {
+.selector, .selector-secondary, .selector[type='text'] {
   padding:15px;
   margin:0px 0px 15px;
   background-color:rgba(0, 0, 0, 0.5);
@@ -44,5 +52,40 @@
 
 .span1 { width: 60px }
 {% endhighlight %}
+
+        </div>
+        <div id="tab-css-2-p" class="stcg__tabs__panel">
+
+{% highlight scss %}
+/* Schlechtes CSS */
+
+.selector, .selector-secondary, .selector[type="text"] {
+  padding: 15px;
+  margin: 0px 0px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px #CCC, inset 0 1px 0 #FFFFFF;
+}
+
+.span1 {
+  width: 60px;
+}
+
+/* Gutes CSS */
+
+.selector, .selector-secondary, .selector[type='text'] {
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+}
+
+.span1 {
+  width: 60px;
+}
+{% endhighlight %}
+
+        </div>
+      </div>
+    </div>
   </div>
 </section>

@@ -8,7 +8,14 @@
     margin-bottom: 0;
     color: $gray-light;
 
-    > span { color: $red; }
+    > span {
+      color: $red;
+      animation: heartbeat 1s linear infinite;
+
+      &:hover {
+        animation-duration: .5s;
+      }
+    }
 
   }
 

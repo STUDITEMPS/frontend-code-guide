@@ -1,0 +1,18 @@
+@keyframes heartbeat {
+
+  0% {
+   	opacity: 1;
+   	transform: scale(1);
+  }
+
+  50% {
+    opacity: .7;
+   	transform: scale(.8);
+  }
+
+  100% {
+    opacity: .85;
+   	transform: scale(.9);
+  }
+
+}

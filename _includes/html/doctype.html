@@ -5,6 +5,17 @@
     <p>Verwende stets die HTML Standards und einen semantischen Code, jedoch nicht zum Preis von Praktikabilität. Verwended bei deinem Markup die geringst mögliche Komplexitäten.</p>
   </div>
   <div class="stcg__content--code">
+
+    <div class="stcg__tabs">
+
+      <input class="stcg__tabs__input" type="radio" name="html-doctype" id="tab-html-3" checked />
+      <input class="stcg__tabs__input" type="radio" name="html-doctype" id="tab-html-4" />
+
+      <div class="stcg__tabs__content">
+        <label for="tab-html-3" id="tab-html-3-l" class="stcg__tabs__label">HTML</label>
+        <label for="tab-html-4" id="tab-html-4-l" class="stcg__tabs__label">Haml</label>
+
+        <div id="tab-html-3-p" class="stcg__tabs__panel active">
 {% highlight html %}
 <!DOCTYPE html>
 <html>
@@ -12,5 +23,17 @@
   </head>
 </html>
 {% endhighlight %}
+        </div>
+        <div id="tab-html-4-p" class="stcg__tabs__panel">
+{% highlight haml %}
+!!!
+%html
+  %head
+{% endhighlight %}
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>

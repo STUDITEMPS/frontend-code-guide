@@ -11,14 +11,16 @@
   </div>
   <div class="stcg__content--code">
 
-
-
     <div class="stcg__tabs">
 
-      <div class="stcg__tab">
-        <input type="radio" id="tab-1" name="tab-syntax" checked>
-        <label for="tab-1">HTML</label>
-        <div class="stcg__tab__content">
+      <input class="stcg__tabs__input" type="radio" name="html-syntax" id="tab-html-1" checked />
+      <input class="stcg__tabs__input" type="radio" name="html-syntax" id="tab-html-2" />
+
+      <div class="stcg__tabs__content">
+        <label for="tab-html-1" id="tab-html-1-l" class="stcg__tabs__label">HTML</label>
+        <label for="tab-html-2" id="tab-html-2-l" class="stcg__tabs__label">Haml</label>
+
+        <div id="tab-html-1-p" class="stcg__tabs__panel">
 {% highlight html %}
 <!DOCTYPE html>
 <html>
@@ -32,12 +34,7 @@
 </html>
 {% endhighlight %}
         </div>
-      </div>
-
-      <div class="stcg__tab">
-        <input type="radio" id="tab-2" name="tab-syntax">
-        <label for="tab-2">Tab Two</label>
-        <div class="stcg__tab__content">
+        <div id="tab-html-2-p" class="stcg__tabs__panel">
 {% highlight haml %}
 !!!
 %html
@@ -51,7 +48,6 @@
       </div>
 
     </div>
-
 
   </div>
 </section>

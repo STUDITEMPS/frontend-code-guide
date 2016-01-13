@@ -4,6 +4,14 @@
     <p>Vermeide überflüssige Elemente beim Schreiben von HTML.</p>
   </div>
   <div class="stcg__content--code">
+    <div class="stcg__tabs">
+      <input class="stcg__tabs__input" type="radio" name="html-reducing-marktup" id="tab-html-13" checked />
+      <input class="stcg__tabs__input" type="radio" name="html-reducing-marktup" id="tab-html-14" />
+      <div class="stcg__tabs__content">
+        <label for="tab-html-13" id="tab-html-13-l" class="stcg__tabs__label">HTML</label>
+        <label for="tab-html-14" id="tab-html-14-l" class="stcg__tabs__label">Haml</label>
+        <div id="tab-html-13-p" class="stcg__tabs__panel">
+
 {% highlight html %}
 <!-- Nicht so gut -->
 <span class='avatar'>
@@ -19,5 +27,24 @@
 
 <strong class='day'>Heute ist Mittwoch.</strong>
 {% endhighlight %}
+
+        </div>
+        <div id="tab-html-14-p" class="stcg__tabs__panel">
+
+{% highlight haml %}
+/ Nicht so gut
+%span.avatar
+  %img{:src => "..."}/
+%span.day
+  %strong Heute ist Mittwoch.
+
+/ Besser
+%img.avatar{:src => "..."}/
+%strong.day Heute ist Mittwoch.
+{% endhighlight %}
+
+        </div>
+      </div>
+    </div>
   </div>
 </section>

@@ -10,6 +10,14 @@
     </ul>
   </div>
   <div class="stcg__content--code">
+    <div class="stcg__tabs">
+      <input class="stcg__tabs__input" type="radio" name="html-style-script" id="tab-html-7" checked />
+      <input class="stcg__tabs__input" type="radio" name="html-style-script" id="tab-html-8" />
+      <div class="stcg__tabs__content">
+        <label for="tab-html-7" id="tab-html-7-l" class="stcg__tabs__label">HTML</label>
+        <label for="tab-html-8" id="tab-html-8-l" class="stcg__tabs__label">Haml</label>
+        <div id="tab-html-7-p" class="stcg__tabs__panel">
+
 {% highlight html %}
 <!-- Externes CSS -->
 <link rel='stylesheet' href='style.css'>
@@ -22,5 +30,24 @@
 <!-- JavaScript -->
 <script src='script.js'></script>
 {% endhighlight %}
+
+        </div>
+        <div id="tab-html-8-p" class="stcg__tabs__panel">
+
+{% highlight haml %}
+/ Externes CSS
+%link{:href => "style.css", :rel => "stylesheet"}/
+
+/ Inline CSS
+:css
+  /* ... */
+
+/ JavaScript
+%script{:src => "script.js"}
+{% endhighlight %}
+
+        </div>
+      </div>
+    </div>
   </div>
 </section>

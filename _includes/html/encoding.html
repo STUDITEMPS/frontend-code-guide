@@ -4,10 +4,30 @@
     <p>Das richtige Rendering des Inhalts kann schnell und einfach mit einer expliziten Zeichenkodierung festgelegt werden. Wenn die Zeichenkodierung als Meta-Tag gesetzt wird, dann kann auf einzelne Deklaration in HTML-Elementen verzeichtet werden, wenn sie mit der Deklaration des Dokumentes übereinstimmen.</p>
   </div>
   <div class="stcg__content--code">
+    <div class="stcg__tabs">
+      <input class="stcg__tabs__input" type="radio" name="html-encoding" id="tab-html-5" checked />
+      <input class="stcg__tabs__input" type="radio" name="html-encoding" id="tab-html-6" />
+      <div class="stcg__tabs__content">
+        <label for="tab-html-5" id="tab-html-5-l" class="stcg__tabs__label">HTML</label>
+        <label for="tab-html-6" id="tab-html-6-l" class="stcg__tabs__label">Haml</label>
+        <div id="tab-html-5-p" class="stcg__tabs__panel">
+
 {% highlight html %}
 <head>
   <meta charset='UTF-8'>
 </head>
 {% endhighlight %}
+
+        </div>
+        <div id="tab-html-6-p" class="stcg__tabs__panel">
+
+{% highlight haml %}
+%head
+  %meta{:charset => "UTF-8"}/
+{% endhighlight %}
+
+        </div>
+      </div>
+    </div>
   </div>
 </section>

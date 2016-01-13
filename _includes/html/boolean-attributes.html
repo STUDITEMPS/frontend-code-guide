@@ -4,6 +4,14 @@
     <p>Ein boolesches Attribut braucht keinen Wert.</p>
   </div>
   <div class="stcg__content--code">
+    <div class="stcg__tabs">
+      <input class="stcg__tabs__input" type="radio" name="html-boolean-attribute" id="tab-html-11" checked />
+      <input class="stcg__tabs__input" type="radio" name="html-boolean-attribute" id="tab-html-12" />
+      <div class="stcg__tabs__content">
+        <label for="tab-html-11" id="tab-html-11-l" class="stcg__tabs__label">HTML</label>
+        <label for="tab-html-12" id="tab-html-12-l" class="stcg__tabs__label">Haml</label>
+        <div id="tab-html-11-p" class="stcg__tabs__panel">
+
 {% highlight html %}
 <input type='text' disabled>
 
@@ -14,5 +22,22 @@
   <option value='2'>2</option>
 </select>
 {% endhighlight %}
+
+        </div>
+        <div id="tab-html-12-p" class="stcg__tabs__panel">
+
+{% highlight haml %}
+%input{:disabled => "disabled", :type => "text"}/
+
+%input{:checked => "checked", :type => "checkbox", :value => "1"}/
+
+%select
+  %option{:selected => "selected", :value => "1"} 1
+  %option{:value => "2"} 2
+{% endhighlight %}
+
+        </div>
+      </div>
+    </div>
   </div>
 </section>

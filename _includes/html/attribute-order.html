@@ -12,6 +12,14 @@
     </ul>
   </div>
   <div class="stcg__content--code">
+    <div class="stcg__tabs">
+      <input class="stcg__tabs__input" type="radio" name="html-attribute-order" id="tab-html-9" checked />
+      <input class="stcg__tabs__input" type="radio" name="html-attribute-order" id="tab-html-10" />
+      <div class="stcg__tabs__content">
+        <label for="tab-html-9" id="tab-html-9-l" class="stcg__tabs__label">HTML</label>
+        <label for="tab-html-10" id="tab-html-10-l" class="stcg__tabs__label">Haml</label>
+        <div id="tab-html-9-p" class="stcg__tabs__panel">
+
 {% highlight html %}
 <a id='...' class='...' data-content='foo' href='#'>
   Beispiel link
@@ -21,5 +29,21 @@
 
 <img src='...' alt='...'>
 {% endhighlight %}
+
+        </div>
+        <div id="tab-html-10-p" class="stcg__tabs__panel">
+
+{% highlight haml %}
+%a{:class => "...", "data-content" => "foo", :href => "#", :id => "..."}
+  Beispiel link
+
+%input.form-control{:type => "text"}/
+
+%img{:alt => "...", :src => "..."}/
+{% endhighlight %}
+
+        </div>
+      </div>
+    </div>
   </div>
 </section>

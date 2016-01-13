@@ -25,7 +25,7 @@
 
   &:hover {
     cursor: pointer;
-    color: $st-blue;
+    color: $st-gray;
   }
 }
 
@@ -39,15 +39,46 @@
 #tab-html-1:checked ~ .stcg__tabs__content #tab-html-1-l,
 #tab-html-2:checked ~ .stcg__tabs__content #tab-html-2-l,
 #tab-html-3:checked ~ .stcg__tabs__content #tab-html-3-l,
-#tab-html-4:checked ~ .stcg__tabs__content #tab-html-4-l {
-    color: $st-blue;
+#tab-html-4:checked ~ .stcg__tabs__content #tab-html-4-l,
+#tab-html-5:checked ~ .stcg__tabs__content #tab-html-5-l,
+#tab-html-6:checked ~ .stcg__tabs__content #tab-html-6-l,
+#tab-html-7:checked ~ .stcg__tabs__content #tab-html-7-l,
+#tab-html-8:checked ~ .stcg__tabs__content #tab-html-8-l,
+#tab-html-9:checked ~ .stcg__tabs__content #tab-html-9-l,
+#tab-html-10:checked ~ .stcg__tabs__content #tab-html-10-l,
+#tab-html-11:checked ~ .stcg__tabs__content #tab-html-11-l,
+#tab-html-12:checked ~ .stcg__tabs__content #tab-html-12-l,
+#tab-html-13:checked ~ .stcg__tabs__content #tab-html-13-l,
+#tab-html-14:checked ~ .stcg__tabs__content #tab-html-14-l,
+#tab-html-15:checked ~ .stcg__tabs__content #tab-html-15-l,
+#tab-html-16:checked ~ .stcg__tabs__content #tab-html-16-l,
+#tab-html-17:checked ~ .stcg__tabs__content #tab-html-17-l,
+#tab-html-18:checked ~ .stcg__tabs__content #tab-html-18-l,
+#tab-html-19:checked ~ .stcg__tabs__content #tab-html-19-l,
+#tab-html-20:checked ~ .stcg__tabs__content #tab-html-20-l {
+    color: $st-gray;
     cursor: default;
-    border-bottom: 1px solid $st-blue;
 }
 
 #tab-html-1:checked ~ .stcg__tabs__content #tab-html-1-p,
 #tab-html-2:checked ~ .stcg__tabs__content #tab-html-2-p,
 #tab-html-3:checked ~ .stcg__tabs__content #tab-html-3-p,
-#tab-html-4:checked ~ .stcg__tabs__content #tab-html-4-p {
+#tab-html-4:checked ~ .stcg__tabs__content #tab-html-4-p,
+#tab-html-5:checked ~ .stcg__tabs__content #tab-html-5-p,
+#tab-html-6:checked ~ .stcg__tabs__content #tab-html-6-p,
+#tab-html-7:checked ~ .stcg__tabs__content #tab-html-7-p,
+#tab-html-8:checked ~ .stcg__tabs__content #tab-html-8-p,
+#tab-html-9:checked ~ .stcg__tabs__content #tab-html-9-p,
+#tab-html-10:checked ~ .stcg__tabs__content #tab-html-10-p,
+#tab-html-11:checked ~ .stcg__tabs__content #tab-html-11-p,
+#tab-html-12:checked ~ .stcg__tabs__content #tab-html-12-p,
+#tab-html-13:checked ~ .stcg__tabs__content #tab-html-13-p,
+#tab-html-14:checked ~ .stcg__tabs__content #tab-html-14-p,
+#tab-html-15:checked ~ .stcg__tabs__content #tab-html-15-p,
+#tab-html-16:checked ~ .stcg__tabs__content #tab-html-16-p,
+#tab-html-17:checked ~ .stcg__tabs__content #tab-html-17-p,
+#tab-html-18:checked ~ .stcg__tabs__content #tab-html-18-p,
+#tab-html-19:checked ~ .stcg__tabs__content #tab-html-19-p,
+#tab-html-20:checked ~ .stcg__tabs__content #tab-html-20-p {
     display: block;
 }

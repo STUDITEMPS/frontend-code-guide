@@ -7,5 +7,5 @@ url: ""
 # Build Settings
 markdown: kramdown # rdiscount
 permalink: pretty
-highlighter: pygments
+highlighter: rouge
 exclude: ['README.md', 'LICENSE.md', 'package.json', 'gulpfile.js', 'node_modules']

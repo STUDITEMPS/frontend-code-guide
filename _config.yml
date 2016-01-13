@@ -1,7 +1,7 @@
 # Site Settings
 title: STUDITEMPS.TECH Front End Code Guide
 description: Unsere STUDITEMPS.TECH Richtlinien für die Entwicklung von flexiblem, wartbarem und beständigem HTML und CSS.
-baseurl: "" # "/code-guide" for production
+baseurl: "/code-guide" # "/code-guide" for production
 
 # Build Settings
 markdown: redcarpet

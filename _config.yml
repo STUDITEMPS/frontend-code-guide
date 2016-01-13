@@ -1,11 +1,10 @@
 # Site Settings
-title: STUDITEMPS.TECH Code Guide
-description: Richtlinien zur Entwicklung von flexiblem, wartbarem und beständigem HTML und CSS.
-baseurl: ""
-url: ""
+title: STUDITEMPS.TECH Front End Code Guide
+description: Unsere STUDITEMPS.TECH Richtlinien für die Entwicklung von flexiblem, wartbarem und beständigem HTML und CSS.
+baseurl: "" # "/code-guide" for production
 
 # Build Settings
-markdown: kramdown # rdiscount
+markdown: redcarpet
 permalink: pretty
-highlighter: rouge
+highlighter: pygments
 exclude: ['README.md', 'LICENSE.md', 'package.json', 'gulpfile.js', 'node_modules']

@@ -1,8 +1,6 @@
 .stcg__content {
   display: flex;
   border-bottom: 1px solid $gray;
-
-  // &:last-of-type { border-bottom: 0; }
 }
 
 .stcg__content--headline {
@@ -28,20 +26,9 @@
 }
 
 .stcg__content--code {
-  display: flex;
-  // align-items: center;
-  // padding-top: 4.5rem;
   background-color: $gray-light;
 
-  > blockquote {
-    margin: 0;
-
-    p {
-      font-style: italic;
-      color: $st-blue;
-    }
-
-  }
+  > blockquote { margin-top: 3.75rem; }
 
 }
 

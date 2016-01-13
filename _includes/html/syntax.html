@@ -10,17 +10,48 @@
     </ul>
   </div>
   <div class="stcg__content--code">
+
+
+
+    <div class="stcg__tabs">
+
+      <div class="stcg__tab">
+        <input type="radio" id="tab-1" name="tab-syntax" checked>
+        <label for="tab-1">HTML</label>
+        <div class="stcg__tab__content">
 {% highlight html %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Seitentitel</title>
-  </head>
-  <body>
-    <img src='images/company-logo.png' alt='Company'>
-    <h1 class='page__title'>Hello, world!</h1>
-  </body>
+ <head>
+   <title>Seitentitel</title>
+ </head>
+ <body>
+   <img src='images/company-logo.png' alt='Company'>
+   <h1 class='page__title'>Hello, world!</h1>
+ </body>
 </html>
 {% endhighlight %}
+        </div>
+      </div>
+
+      <div class="stcg__tab">
+        <input type="radio" id="tab-2" name="tab-syntax">
+        <label for="tab-2">Tab Two</label>
+        <div class="stcg__tab__content">
+{% highlight haml %}
+!!!
+%html
+  %head
+    %title Seitentitel
+  %body
+    %img{:alt => "Company", :src => "images/company-logo.png"}/
+    %h1.page__title Hello, world!
+{% endhighlight %}
+        </div>
+      </div>
+
+    </div>
+
+
   </div>
 </section>

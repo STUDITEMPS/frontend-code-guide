@@ -3,12 +3,9 @@
     <h3>Attributreihenfolge</h3>
     <p>HTML-Attribute sollten in der folgenden Ordnung erscheinen, um ihre Lesbarkeit zu erleichtern.</p>
     <ul>
-      <li><code>id</code>, <code>name</code></li>
+      <li><code>id</code></li>
+      <li><code>name</code></li>
       <li><code>class</code></li>
-      <li><code>data-*</code></li>
-      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
-      <li><code>title</code>, <code>alt</code></li>
-      <li><code>aria-*</code>, <code>role</code></li>
     </ul>
   </div>
   <div class="stcg__content--code">
@@ -34,12 +31,12 @@
         <div id="tab-html-10-p" class="stcg__tabs__panel">
 
 {% highlight haml %}
-%a{:class => "...", "data-content" => "foo", :href => "#", :id => "..."}
+%a#id.class{ name: 'foo', href: '#', data: { content: 'foo' } }
   Beispiel link
 
-%input.form-control{:type => "text"}/
+%input.form-control{ type: 'text' }
 
-%img{:alt => "...", :src => "..."}/
+%img{ alt: 'foo', src: 'bar.png' }
 {% endhighlight %}
 
         </div>

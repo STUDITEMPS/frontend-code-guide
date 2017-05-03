@@ -27,13 +27,13 @@
         <div id="tab-html-12-p" class="stcg__tabs__panel">
 
 {% highlight haml %}
-%input{:disabled => "disabled", :type => "text"}/
+%input{ disabled, type: 'text' }
 
-%input{:checked => "checked", :type => "checkbox", :value => "1"}/
+%input{ checked, type: 'checkbox', value: 1}/
 
 %select
-  %option{:selected => "selected", :value => "1"} 1
-  %option{:value => "2"} 2
+  %option{ selected, value: 1} 1
+  %option{ value: 2} 2
 {% endhighlight %}
 
         </div>

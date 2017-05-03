@@ -1,7 +1,7 @@
 <section class="stcg__content" id="html-style-script">
   <div class="stcg__content--text">
     <h3>CSS und JavaScript Includes</h3>
-    <p>Nach den HTML5-Spezifikationen ist es nicht notwendig, einen <code>type</code> anzugeben, da CSS und JavaScript per Definition als <code>text/css</code> und <code>text/javascript</code> gelesen werden.</p>
+    <p>Nach den HTML5-Spezifikationen ist es nicht notwendig, einen <code>type</code> anzugeben, da CSS und JavaScript per Definition als <code>text/css</code> und <code>text/javascript</code> gelesen werden. Nutze, wenn möglich, Helper, wie z.B. <code>= stylesheet 'url'</code> von Rails.</p>
     <h4>Links zu den HTML5-Spezifikationen:</h4>
     <ul>
       <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Benutzung von <code>link</code></a></li>
@@ -36,14 +36,14 @@
 
 {% highlight haml %}
 / Externes CSS
-%link{:href => "style.css", :rel => "stylesheet"}/
+%link{ href: 'style.css', rel: 'stylesheet'}
 
 / Inline CSS
 :css
   /* ... */
 
 / JavaScript
-%script{:src => "script.js"}
+%script{ src: 'script.js' }
 {% endhighlight %}
 
         </div>

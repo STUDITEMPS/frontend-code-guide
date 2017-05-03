@@ -337,7 +337,8 @@ figure {
   margin: 1em 40px; }
 
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0; }
 
 pre {
@@ -387,7 +388,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0; }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -396,6 +398,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box; }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -434,6 +437,7 @@ html {
   background-color: #fff; }
 
 body {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -450,7 +454,8 @@ body {
 *,
 *:before,
 *:after {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 @-webkit-keyframes heartbeat {
   0% {
@@ -535,7 +540,8 @@ code {
   font-size: .875rem;
   color: #d44950;
   background-color: #f6f6f6;
-  border-radius: 3px; }
+  -webkit-border-radius: 3px;
+          border-radius: 3px; }
 
 pre {
   display: block;
@@ -558,6 +564,7 @@ pre {
 
 a {
   color: inherit;
+  -webkit-transition: color .1s ease-in;
   transition: color .1s ease-in; }
   a:hover {
     color: #45bcda; }
@@ -585,6 +592,7 @@ a {
     padding-left: 8rem; } }
 
 .stcg-main {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -595,6 +603,7 @@ a {
   top: 0;
   bottom: 0;
   left: 0;
+  -webkit-box-flex: 0;
   -webkit-flex: 0 0 260px;
       -ms-flex: 0 0 260px;
           flex: 0 0 260px;
@@ -609,17 +618,21 @@ a {
 
 .stcg__sidebar__logo {
   height: 76px;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #E0E0E0; }
   .stcg__sidebar__logo > a {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
@@ -647,17 +660,20 @@ a {
     padding-top: 0; }
 
 .stcg__content {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #E0E0E0; }
 
 .stcg__content--headline {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding: 1.5rem 3rem;
   background-color: #E0E0E0;
+  -webkit-transition: padding .1s ease-in;
   transition: padding .1s ease-in; }
   .stcg__content--headline > h1 {
     margin-bottom: 0;
@@ -667,10 +683,12 @@ a {
 
 .stcg__content--text,
 .stcg__content--code {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding: 3rem;
+  -webkit-transition: padding .1s ease-in;
   transition: padding .1s ease-in; }
 
 .stcg__content--code {
@@ -685,7 +703,8 @@ a {
   color: #ed677a;
   text-transform: uppercase;
   background-color: #fccb8d;
-  border-radius: 3px; }
+  -webkit-border-radius: 3px;
+          border-radius: 3px; }
 
 @media (min-width: 80em) {
   .stcg__content--headline,
@@ -717,9 +736,11 @@ a {
   left: -10000px; }
 
 .stcg__tabs__content {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -728,6 +749,7 @@ a {
           flex-wrap: wrap; }
 
 .stcg__tabs__label {
+  -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -739,6 +761,7 @@ a {
   color: #9E9E9E;
   text-align: center;
   border-bottom: 1px solid #E0E0E0;
+  -webkit-transition: all .15s ease-in;
   transition: all .15s ease-in; }
   .stcg__tabs__label:hover {
     cursor: pointer;
@@ -802,9 +825,11 @@ a {
   display: block; }
 
 .stcg__footer {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;

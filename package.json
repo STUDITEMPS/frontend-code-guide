@@ -29,5 +29,8 @@
     "sass",
     "haml",
     "browsersync"
-  ]
+  ],
+  "dependencies": {
+    "browser-sync": "^2.18.8"
+  }
 }

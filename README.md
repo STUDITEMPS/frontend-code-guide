@@ -27,13 +27,15 @@ Um dieses Projekt bestmöglich lokal zu nutzen musst du folgendes installieren
 
 ## To Do
 
-- [ ] Erster Review von alle Frontend’lern
-- [ ] Layout Fixes
-- [ ] SCSS überarbeiten
 - [ ] Responsive Version kleiner als Desktop (~1024px)
 - [ ] Mobile Navigation
 
 ## Changelog
+
+#### 3.05.2017
+
+- Updates aus dem 4. Frontend-Chapter übertragen (CA)
+- Rocket-Pipes aus HAML-Codesamples entfernt (CA)
 
 #### 13.01.2016
 
